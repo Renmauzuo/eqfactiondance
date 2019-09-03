@@ -6,3 +6,8 @@
 .faction-list-container {
 	margin: 5px 0;
 }
+
+.faction-info-link {
+	display: block;
+	margin-bottom: 5px;
+}
