@@ -9,21 +9,8 @@ $(function () {
 	var factionInfo = factionList[factionId];
 	$('<h1></h1>').html(factionInfo.name).appendTo('#info-wrapper');
 
-	var importanceString;
 
-	switch(factionInfo.importance) {
-		case 0:
-			importanceString = "Expendable";
-			break;
-		case 1:
-			importanceString = "Unimportant"
-			break;
-		case 2: 
-			importanceString = "Important";
-			break;
-	}  
-
-	$('<p>'+importanceString+" Faction</p>").appendTo('#info-wrapper');
+	$('<p>'+importanceStrings[factionInfo.importance]+" "+eraStrings[factionInfo.era]+" Faction</p>").appendTo('#info-wrapper');
 
 	$('<p><strong>Description:</strong></p>').appendTo('#info-wrapper');
 	var description = factionInfo.description || "No description available.";
