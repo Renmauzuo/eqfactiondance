@@ -1,12 +1,9 @@
- <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-   	<title>About</title>
-	<link rel="stylesheet" type="text/css" href="styles/global.css">
-</head>
-<body>
-  	<div id="header"></div>
+extends ../pug/_base.pug
+
+block title 
+	title About
+
+block content
 	<h1>About EQ Faction Dance</h1>
 	<p>This site is meant to be a tool to assist adventurers who want to ally with as many factions as possible.</p>
 	<p>This is an open source project. If you find an error or have an idea for a change feel free to either open an issue <a href="https://github.com/Renmauzuo/eqfactiondance/issues">on Github</a> or fork the repository and make a pull request with your desired changes.</p>
@@ -44,7 +41,3 @@
 	<p>Faction relationships are often mutual, and if two factions hate each other it is sometimes difficult to raise each other. In many cases it can be done either by doing quests for an ally of one faction that doesn't hate the other, or by fighting a different enemy of one or both of them. Other times, however, it is difficult if not impossible to raise one of two factions without hurting the other. These faction pairs are referred to as diametrically opposed factions.</p>
 	<h3>Safe/Unsafe Factions</h3>
 	<p>A faction is safe to increase when you won't need to hurt it to raise other factions. Unsafe factions are factions that if raised now will probably be damaged later. Many factions are always safe, as they have few or no enemies, but other factions only become safe when you finish working with their enemies. For example, you will need to hurt your standing with the giants of Kael Drakkel to make the coldain of Thurgadin like you, but Kael factions can be improved without harming Thurgadin factions, so once you are done with Thurgadin Kael Drakkel becomes safe, provided you don't accidentally damage your Thurgadin faction and need to repair it.</p>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="scripts/global.js"></script>
-</body>
-</html>

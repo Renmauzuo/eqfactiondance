@@ -1,7 +1,7 @@
 $(function () {
 	//TODO: Faction list sorting and filtering
 	for (var i = 0; i < factionList.length; i++) {
-		$factionContainer = $('<div class="faction-list-container"></div>');
+		let $factionContainer = $('<div class="faction-list-container"></div>');
 		$factionContainer.appendTo('#list-wrapper');
 		$('<a class="faction-info-link" href="#" data-faction="'+i+'">'+factionList[i].name+'</a>').appendTo($factionContainer);
 	}
@@ -9,7 +9,7 @@ $(function () {
 	$('body').on('click', '.faction-list-container a.faction-info-link', function (e) {
 		e.preventDefault();
 
-		$factionInfo = $(this).data('info-block');
+		let $factionInfo = $(this).data('info-block');
 
 		if (!$factionInfo) {
 			var factionId = $(this).data('faction');

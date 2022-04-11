@@ -14,5 +14,4 @@ var eraStrings = [
 var importanceOptionalExpendable = importanceExpendable;
 
 $(function () {
-	$('#header').load('html/header.html');
 });

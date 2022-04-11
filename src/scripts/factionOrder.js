@@ -18,7 +18,7 @@ $(function () {
 });
 
 function createFactionListItem(id) {
-	$itemContainer = $('<div></div>');
+	let $itemContainer = $('<div></div>');
 	$('<button data-faction="'+id+'">Hide Faction</button>').appendTo($itemContainer);
 	$('<a href="faction-details.html?faction='+id+'">'+factionList[id].name+'</a>').appendTo($itemContainer);
 	return $itemContainer;
