@@ -10,7 +10,7 @@ $(function () {
 	
 	refreshLists();
 
-	$('#safe-factions, #unsafe-factions').on('click', 'button', function () {
+	$('.order-list').on('click', 'button', function () {
 		completedFactions.push($(this).data('faction'));
 		localStorage['completedFactions'] = JSON.stringify(completedFactions);
 		refreshLists();
@@ -25,7 +25,7 @@ function createFactionListItem(id) {
 }
 
 function refreshLists() {
-	$('#safe-factions, #unsafe-factions').empty();
+	$('.order-list').empty();
 	
 	var incompleteFactions = factionList.filter(function (faction) {
 		//If faction cannot be raised then remove it		
@@ -43,6 +43,7 @@ function refreshLists() {
 
 	var safeFactions = [];
 	var unsafeFactions = [];
+    var opposedFactions = [];
 	//For every incomplete faction check it against every other incomplete faction to make sure none will hurt it
 	for (var i = 0; i < incompleteFactions.length; i++) {
 		var factionId = factionList.indexOf(incompleteFactions[i]);
@@ -50,6 +51,16 @@ function refreshLists() {
 		for (var j = 0; j < incompleteFactions.length; j++) {
 			if (incompleteFactions[j].factionsLowered && incompleteFactions[j].factionsLowered.includes(factionId)) {
 				factionSafe = false;
+
+                //Check if this is bidirectional
+                let opposedFactionId = factionList.indexOf(incompleteFactions[j]);
+                if (incompleteFactions[i].factionsLowered && incompleteFactions[i].factionsLowered.includes(opposedFactionId)) {
+                    //To prevent duplicates only add it if j is higher than i
+                    if (j > i) {
+                        opposedFactions.push([factionId, opposedFactionId]);
+                    }
+                }
+
 				break;
 			}
 		}
@@ -66,5 +77,12 @@ function refreshLists() {
 
 	for (var i = 0; i < unsafeFactions.length; i++) {
 		$('#unsafe-factions').append(createFactionListItem(unsafeFactions[i]));
+	}
+
+    for (var i = 0; i < opposedFactions.length; i++) {
+        let $factionRow = $('<div></div>');
+		$factionRow.append(createFactionListItem(opposedFactions[i][0]));
+		$factionRow.append(createFactionListItem(opposedFactions[i][1]));
+        $factionRow.appendTo('#opposed-factions');
 	}
 }

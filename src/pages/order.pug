@@ -1,18 +1,31 @@
 extends ../pug/_base.pug
 
 block title 
-	title Faction Order
+    title Faction Order
 
 block style 
-	link(rel="stylesheet" type="text/css" href="styles/factionOrder.min.css")
+    link(rel="stylesheet" type="text/css" href="styles/factionOrder.min.css")
 
 block script
-	script(src="scripts/factionOrder.min.js")
+    script(src="scripts/factionOrder.min.js")
 
 block content
-	p This list includes factions which you can begin working on now as you shouldn't need to hurt them later when increasing other factions. When you have maxed a faction (or if you want to skip it) click the button next to name to update the list.
-	p Completed factions are saved using localStorage.
-	#safe-factions
-	p This list includes factions that are not yet safe as you are likely to hurt them while increasing factions in the list above. While you can still work on improving your standing you may end up undoing some of your work. This list is provided so that you can pre-emptively skip some factions listed here, which might expand the list of safe factions above.
-	p Note that some factions are diametrically opposed to each such as the Dragons of Norrath mission factions. It is impossible to raise one without harming the other and so these factions will never appear in the list above unless you skip their enemies in the list below.
-	#unsafe-factions
+    h1 Faction Dance Order 
+    p This page contains various lists to help you plan your faction dance and the optimal order to raise factions.
+    h2 Safe Factions
+    p This list includes factions which you can begin working on now as you shouldn't need to hurt them later when increasing other factions. When you have maxed a faction (or if you want to skip it) click the button next to name to update the list.
+    p Completed factions are saved using localStorage.
+    details 
+        summary Toggle Safe Factions List
+        .order-list#safe-factions
+    h2 Unsafe Factions
+    p This list includes factions that are not yet safe as you are likely to hurt them while increasing factions in the list above. While you can still work on improving your standing you may end up undoing some of your work. This list is provided so that you can pre-emptively skip some factions listed here, which might expand the list of safe factions above.
+    p Note that some factions are diametrically opposed to each such as the Dragons of Norrath mission factions. It is impossible to raise one without harming the other and so these factions will never appear in the list above unless you skip their enemies in the list below.
+    details 
+        summary Toggle Unsafe Factions List
+        .order-list#unsafe-factions
+    h2 Opposed Factions 
+    p This list contains factions which are diametrically opposed to each other. They will not appear in the safe faction list unless their opposed faction(s) are skipped. Hide the factions you aren't interested in to allow their opposed factions to become safe.
+    details 
+        summary Toggle Opposed Factions List
+        .order-list#opposed-factions

@@ -12,3 +12,9 @@ main {
 	width: 90%;
 	margin: auto;
 }
+
+details {
+    summary + * {
+        margin-top: 12px;
+    }
+}
