@@ -1455,7 +1455,7 @@ var factionList = [
 	{
 		name			: "Pickclaw Goblins",
 		era				: 0,
-		importance		: importanceExpendable,
+		importance		: importanceUnimportant,
 		allies			: null,
 		enemies			: [69,93],
 		description		: "One of the two goblin clans living in Runnyeye.",

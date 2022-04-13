@@ -18,3 +18,10 @@ details {
         margin-top: 12px;
     }
 }
+
+label {
+    & + select {
+        margin-left: 5px;
+
+    }
+}

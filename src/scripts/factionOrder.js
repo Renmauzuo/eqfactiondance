@@ -1,6 +1,5 @@
 var completedFactions;
 
-
 $(function () {
 	if (!localStorage['completedFactions']) {
 		localStorage['completedFactions'] = "[]";
@@ -8,13 +7,22 @@ $(function () {
 
 	completedFactions = JSON.parse(localStorage['completedFactions']);
 	
-	refreshLists();
-
 	$('.order-list').on('click', 'button', function () {
 		completedFactions.push($(this).data('faction'));
 		localStorage['completedFactions'] = JSON.stringify(completedFactions);
 		refreshLists();
 	});
+
+
+    if (localStorage['minimum-importance']) {
+        $('#minimum-importance').val(localStorage['minimum-importance']);
+    }
+    $('#minimum-importance').on('change', function () {
+        localStorage['minimum-importance'] = $(this).val();
+        refreshLists();
+    });
+
+	refreshLists();
 });
 
 function createFactionListItem(id) {
@@ -26,7 +34,8 @@ function createFactionListItem(id) {
 
 function refreshLists() {
 	$('.order-list').empty();
-	
+    var minimumImportance = parseInt($('#minimum-importance').val());
+
 	var incompleteFactions = factionList.filter(function (faction) {
 		//If faction cannot be raised then remove it		
 		if (!faction.howToRaise) {
@@ -37,6 +46,11 @@ function refreshLists() {
 		if (completedFactions.includes(factionList.indexOf(faction))) {
 			return false;
 		}
+
+        //Filter out faction if it falls below our minimum threshold
+        if (faction.importance < minimumImportance) {
+            return false;
+        }
 
 		return true;
 	});

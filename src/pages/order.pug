@@ -11,7 +11,12 @@ block script
 
 block content
     h1 Faction Dance Order 
-    p This page contains various lists to help you plan your faction dance and the optimal order to raise factions.
+    p This page contains various lists to help you plan your faction dance and the optimal order to raise factions. If you only care about important factions (or want to max everything you can) you can use the dropdown to select the minimum faction importance for the lists below. Any factions below your threshold will be considered expendable.
+    label(for="minimum-importance") Minimum Importance:
+    select#minimum-importance(name="minimum-importance")
+        option(value=4) Important
+        option(value=3) Unimportant
+        option(value=2) Useless
     h2 Safe Factions
     p This list includes factions which you can begin working on now as you shouldn't need to hurt them later when increasing other factions. When you have maxed a faction (or if you want to skip it) click the button next to name to update the list.
     p Completed factions are saved using localStorage.
