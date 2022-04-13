@@ -1,11 +1,4 @@
 $(function () {
-	//TODO: Faction list sorting and filtering
-	for (var i = 0; i < factionList.length; i++) {
-		let $factionContainer = $('<div class="faction-list-container"></div>');
-		$factionContainer.appendTo('#list-wrapper');
-		$('<a class="faction-info-link" href="#" data-faction="'+i+'">'+factionList[i].name+'</a>').appendTo($factionContainer);
-	}
-
 	$('body').on('click', '.faction-list-container a.faction-info-link', function (e) {
 		e.preventDefault();
 
@@ -34,4 +27,66 @@ $(function () {
 		$factionInfo.slideToggle();
 	});
 
+    if (localStorage['preferred-sort']) {
+        $('#sort-by').val(localStorage['preferred-sort']);
+    }
+    $('#sort-by').on('change', updateFactionList);
+
+    updateFactionList();
+
 });
+
+function updateFactionList() {
+    $('#list-wrapper').empty();
+    let sortType = $('#sort-by').val();
+    localStorage['preferred-sort'] = sortType;
+
+    let factionListCopy = factionList.slice();
+    factionListCopy.sort(function(a,b) {
+        if (sortType == "Era" && a.era != b.era) {
+            return a.era - b.era;
+        }
+
+        if (sortType == "Importance" && a.importance != b.importance) {
+            return b.importance - a.importance;
+        }
+
+        return a.name.localeCompare(b.name);
+    });
+
+    if (sortType == "Era") {
+        for (let i = 0; i < eraStrings.length; i++) {
+            $('<h3 data-era='+i+'>'+eraStrings[i]+'</h3>').appendTo('#list-wrapper');
+        }
+    } else if (sortType == "Importance") {
+        for (let i = 0; i < importanceStrings.length; i++) {
+            $('<h3 data-era='+i+'>'+importanceStrings[i]+'</h3>').prependTo('#list-wrapper');
+        }
+    }
+
+	for (var i = 0; i < factionListCopy.length; i++) {
+        let currentFaction = factionListCopy[i];
+		let $factionContainer = $('<div class="faction-list-container"></div>');
+        let factionId = factionList.indexOf(currentFaction);
+		$('<a class="faction-info-link" href="#" data-faction="'+factionId+'">'+currentFaction.name+'</a>').appendTo($factionContainer);
+
+        if (sortType == "Era") {
+            let nextLabel = $('h3[data-era='+(currentFaction.era+1)+']');
+            if (nextLabel.length) {
+                $factionContainer.insertBefore(nextLabel);
+            } else {
+                $factionContainer.appendTo('#list-wrapper');
+            }
+        } else if (sortType == "Importance") {
+            let nextLabel = $('h3[data-era='+(currentFaction.importance-1)+']');
+            if (nextLabel.length) {
+                $factionContainer.insertBefore(nextLabel);
+            } else {
+                $factionContainer.appendTo('#list-wrapper');
+            }
+        } else {
+            $factionContainer.appendTo('#list-wrapper');
+        }
+	}
+
+}

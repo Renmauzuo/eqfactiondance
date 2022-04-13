@@ -10,4 +10,9 @@ block script
     script(src="scripts/factionList.min.js")
 
 block content
+    label(for="sort-by") Sort Factions by:
+    select#sort-by(name="sort-by")
+        option Alphabetical
+        option Era
+        option Importance
     #list-wrapper
