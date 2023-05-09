@@ -2670,7 +2670,7 @@ var factionList = [
 		allies			: null,
 		enemies			: null,
 		description		: "Gnome pirates in Iceclad Ocean.",
-		howToRaise		: "<a href=''https://everquest.allakhazam.com/db/quest.html?quest=930'>This quest</a> seems to be the only way. You can use an alt to avoid the Kromrif hits, although it might not be worth the bother if you're killing Kromrif for Coldain.",
+		howToRaise		: "<a href='https://everquest.allakhazam.com/db/quest.html?quest=930'>This quest</a> seems to be the only way. You can use an alt to avoid the Kromrif hits, although it might not be worth the bother if you're killing Kromrif for Coldain.",
 		factionsLowered	: [235, 236],
 	},
     //	242
@@ -2828,10 +2828,10 @@ var factionList = [
 		howToRaise		: "Kill paebala.",
 		factionsLowered	: [240],
 	},
-    //	251
+    //	256
 	{
-		name			: "",
-		era				: 2,
+		name			: "Akheva",
+		era				: 3,
 		importance		: importanceExpendable,
 		allies			: null,
 		enemies			: null,
@@ -2839,10 +2839,10 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	251
+    //	256
 	{
 		name			: "",
-		era				: 2,
+		era				: 3,
 		importance		: importanceExpendable,
 		allies			: null,
 		enemies			: null,
