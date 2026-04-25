@@ -2839,7 +2839,18 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	256
+    //	257
+	{
+		name			: "",
+		era				: 3,
+		importance		: importanceExpendable,
+		allies			: null,
+		enemies			: null,
+		description		: null,
+		howToRaise		: null,
+		factionsLowered	: null,
+	},
+    //	258
 	{
 		name			: "",
 		era				: 3,
