@@ -975,7 +975,7 @@ var factionList = [
 		allies			: [55,60],
 		enemies			: null,
 		description		: "Merchants of Kelethin.",
-		howToRaise		: "The easiest way is to give wine to Lady Shae, but this will hurt your Indigo Brotherhood faction. If you prefer not to do that you can do <a href='http://everquest.allakhazam.com/db/quest.html?quest=2906'>this quest</a> instead. Killing Crushbone orcs would also hurt Indigo Brotherhood, but you can get around that by buying them or just use Deathfist items instead.",
+		howToRaise		: "The easiest way is to give wine to Lady Shae, but this will hurt your Indigo Brotherhood faction. If you prefer not to do that you can do <a href='http://everquest.allakhazam.com/db/quest.html?quest=4304'>this quest</a> instead. Killing Crushbone orcs would also hurt Indigo Brotherhood, but you can get around that by buying them or just use Deathfist items instead.",
 		factionsLowered	: null,
 	},
 	//	88
