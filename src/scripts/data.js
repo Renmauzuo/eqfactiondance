@@ -4,21 +4,281 @@ const importanceUseless = 2;
 const importanceUnimportant = 3;
 const importanceImportant = 4;
 
+// Faction ID constants
+const FACTION_AGENTS_OF_MISTMOORE = 0;
+const FACTION_AGGRESSORS_OF_KITHICOR = 1;
+const FACTION_ALLIZE_TAEEW = 2;
+const FACTION_ALLIZE_VOLEW = 3;
+const FACTION_ANCHORITES_OF_BRELL_SERILIS = 4;
+const FACTION_ANKHEFENMUT = 5;
+const FACTION_ANTONIUS_BAYLE = 6;
+const FACTION_ARBOREANS_OF_THE_FAYDARK = 7;
+const FACTION_ARCANE_SCIENTISTS = 8;
+const FACTION_ASHEN_ORDER = 9;
+const FACTION_BEFALLEN_INHABITANTS = 10;
+const FACTION_BLOODSABERS = 11;
+const FACTION_BROKEN_SKULL_CLAN = 12;
+const FACTION_BROWNIES_OF_FAYDWER = 13;
+const FACTION_BURNING_DEAD = 14;
+const FACTION_BUTCHERBLOCK_BANDITS = 15;
+const FACTION_CARSON_MCCABE = 16;
+const FACTION_CIRCLE_OF_UNSEEN_HANDS = 17;
+const FACTION_CITIZENS_OF_GUKTA = 18;
+const FACTION_CLAN_KOLBOK = 19;
+const FACTION_CLAN_RUNNYEYE = 20;
+const FACTION_CLERICS_OF_GUKTA = 21;
+const FACTION_CLERICS_OF_TUNARE = 22;
+const FACTION_CLERICS_OF_UNDERFOOT = 23;
+const FACTION_CLOCKWORKS_OF_AKANON = 24;
+const FACTION_CLURG = 25;
+const FACTION_COALITION_OF_TRADEFOLK = 26;
+const FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND = 27;
+const FACTION_COMMONS_RESIDENTS = 28;
+const FACTION_CORRUPT_QEYNOS_GUARDS = 29;
+const FACTION_CRAFTKEEPERS = 30;
+const FACTION_CRAKNEK_WARRIORS = 31;
+const FACTION_CRIMSON_HANDS = 32;
+const FACTION_CRUSHBONE_ORCS = 33;
+const FACTION_CURSED_FROGLOKS_OF_GUKTA = 34;
+const FACTION_DABASHERS = 35;
+const FACTION_DARK_BARGAINERS = 36;
+const FACTION_DARK_ONES = 37;
+const FACTION_DARK_REFLECTION = 38;
+const FACTION_DARKPAWS_OF_JAGGEDPINE = 39;
+const FACTION_DEATHFIST_ORCS = 40;
+const FACTION_DEEPMUSES = 41;
+const FACTION_DEEPPOCKETS = 42;
+const FACTION_DEEPWATER_KNIGHTS = 43;
+const FACTION_DEFECTIVE_CLOCKWORK = 44;
+const FACTION_DEFENDERS_OF_KITHICOR = 45;
+const FACTION_DERVISH_CUTTHROATS = 46;
+const FACTION_DISMAL_RAGE = 47;
+const FACTION_DONOVON = 48;
+const FACTION_DRAFLING = 49;
+const FACTION_DREADGUARD_INNER = 50;
+const FACTION_DREADGUARD_OUTER = 51;
+const FACTION_DRYADS_OF_THE_GROVE = 52;
+const FACTION_EBON_MASK = 53;
+const FACTION_ELDRITCH_COLLECTIVE = 54;
+const FACTION_EMERALD_WARRIORS = 55;
+const FACTION_ERUDIN_CITIZENS = 56;
+const FACTION_EXILED_FROGLOKS = 57;
+const FACTION_FAIRIE = 58;
+const FACTION_FALLEN_OF_BLOODY_KITHICOR = 59;
+const FACTION_FAYDARKS_CHAMPIONS = 60;
+const FACTION_FROGLOKS_OF_GUK = 61;
+const FACTION_GATE_CALLERS = 62;
+const FACTION_GEM_CHOPPERS = 63;
+const FACTION_GOBLINS_OF_FIRE_PEAK = 64;
+const FACTION_GREEN_BLOOD_KNIGHTS = 65;
+const FACTION_GROBB_GUARD = 66;
+const FACTION_GROBB_MERCHANTS = 67;
+const FACTION_GUARDIANS_OF_THE_HATCHLING = 68;
+const FACTION_GUARDIANS_OF_THE_VALE = 69;
+const FACTION_GUARDS_OF_QEYNOS = 70;
+const FACTION_GUKTAN_ELDERS = 71;
+const FACTION_GUKTAN_SUPPLIERS = 72;
+const FACTION_HERETICS = 73;
+const FACTION_HIGH_COUNCIL_OF_ERUDIN = 74;
+const FACTION_HIGH_COUNCIL_OF_GUKTA = 75;
+const FACTION_HIGH_GUARD_OF_ERUDIN = 76;
+const FACTION_HIGHPASS_GUARDS = 77;
+const FACTION_INDIGO_BROTHERHOOD = 78;
+const FACTION_INHABITANTS_OF_HATE = 79;
+const FACTION_JAGGEDPINE_TREEFOLK = 80;
+const FACTION_KANE_BAYLE = 81;
+const FACTION_KARANA_BANDITS = 82;
+const FACTION_KARANA_RESIDENTS = 83;
+const FACTION_KAZON_STORMHAMMER = 84;
+const FACTION_KEEPERS_OF_THE_ARTS = 85;
+const FACTION_KEJEK_VILLAGE = 86;
+const FACTION_KELETHIN_MERCHANTS = 87;
+const FACTION_KERRA_ISLE = 88;
+const FACTION_KERRA_OF_BARREN_COAST = 89;
+const FACTION_KING_AKANON = 90;
+const FACTION_KING_NAYTHOX_THEX = 91;
+const FACTION_KING_TEARIS_THEX = 92;
+const FACTION_KING_XORBB = 93;
+const FACTION_KITHICOR_RESIDENTS = 94;
+const FACTION_KNIGHTS_OF_THUNDER = 95;
+const FACTION_KNIGHTS_OF_TRUTH = 96;
+const FACTION_KOBOLDS_OF_FIRE_PIT = 97;
+const FACTION_KRAG = 98;
+const FACTION_LEAGUE_OF_ANTONICAN_BARDS = 99;
+const FACTION_LOREKEEPERS_OF_GUKTA = 100;
+const FACTION_MAYONG_MISTMOORE = 101;
+const FACTION_MAYOR_GUBBIN = 102;
+const FACTION_MELDRATH = 103;
+const FACTION_MERCHANTS_OF_AKANON = 104;
+const FACTION_MERCHANTS_OF_ERUDIN = 105;
+const FACTION_MERCHANTS_OF_FELWITHE = 106;
+const FACTION_MERCHANTS_OF_HALAS = 107;
+const FACTION_MERCHANTS_OF_HIGHPASS = 108;
+const FACTION_MERCHANTS_OF_KALADIM = 109;
+const FACTION_MERCHANTS_OF_OGGOK = 110;
+const FACTION_MERCHANTS_OF_QEYNOS = 111;
+const FACTION_MERCHANTS_OF_RIVERVALE = 112;
+const FACTION_MINERS_GUILD_249 = 113;
+const FACTION_MINERS_GUILD_628 = 114;
+const FACTION_MINIONS_OF_UNDERFOOT = 115;
+const FACTION_MUCKTAIL_GNOLLS = 116;
+const FACTION_NAGAFEN = 117;
+const FACTION_NAJENA = 118;
+const FACTION_NERIAK_GHOUL = 119;
+const FACTION_NERIAK_OGRE = 120;
+const FACTION_NERIAK_TROLL = 121;
+const FACTION_OGGOK_GUARDS = 122;
+const FACTION_OGGOK_RESIDENT = 123;
+const FACTION_OPAL_DARKBRIAR = 124;
+const FACTION_ORACLE_OF_KARNON = 125;
+const FACTION_ORDER_OF_THREE = 126;
+const FACTION_PALADINS_OF_GUKTA = 127;
+const FACTION_PALADINS_OF_UNDERFOOT = 128;
+const FACTION_PEACE_KEEPERS = 129;
+const FACTION_PHINIGEL_AUTROPOS = 130;
+const FACTION_PICKCLAW_GOBLINS = 131;
+const FACTION_PIRATES_OF_THE_PINE = 132;
+const FACTION_PIXIES_OF_FAYDWER = 133;
+const FACTION_PRIESTS_OF_INNORUUK = 134;
+const FACTION_PRIESTS_OF_LIFE = 135;
+const FACTION_PRIESTS_OF_MARR = 136;
+const FACTION_PRIESTS_OF_MISCHIEF = 137;
+const FACTION_PRIMORDIAL_MALICE = 138;
+const FACTION_PROTECTORS_OF_GUKTA = 139;
+const FACTION_PROTECTORS_OF_PINE = 140;
+const FACTION_QEYNOS_CITIZENS = 141;
+const FACTION_QEYNOS_ELITE_WATCH = 142;
+const FACTION_RESIDENTS_OF_JAGGEDPINE = 143;
+const FACTION_RIPTIDE_GOBLINS = 144;
+const FACTION_ROGUES_OF_THE_WHITE_ROSE = 145;
+const FACTION_SABERTOOTHS_OF_BLACKBURROW = 146;
+const FACTION_SHADOWED_MEN = 147;
+const FACTION_SHADOWKNIGHTS_OF_NIGHT_KEEP = 148;
+const FACTION_SHAMAN_OF_GUKTA = 149;
+const FACTION_SHAMEN_OF_JUSTICE = 150;
+const FACTION_SHAMEN_OF_WAR = 151;
+const FACTION_SHRALOK_ORCS = 152;
+const FACTION_SILENT_FIST_CLAN = 153;
+const FACTION_SKY_TALONS = 154;
+const FACTION_SOLDIERS_OF_TUNARE = 155;
+const FACTION_SOLUSEK_MINING_CO = 156;
+const FACTION_SONG_WEAVERS = 157;
+const FACTION_SPLIT_PAW_CLAN = 158;
+const FACTION_SPORALI = 159;
+const FACTION_STEEL_WARRIORS = 160;
+const FACTION_STONE_HIVE_BIXIES = 161;
+const FACTION_STORM_GUARD = 162;
+const FACTION_STORM_REAPERS = 163;
+const FACTION_SUREFALL_PROTECTED_ANIMALS = 164;
+const FACTION_TEMPLE_OF_SOLUSEK_RO = 165;
+const FACTION_THE_DEAD = 166;
+const FACTION_THE_FREEPORT_MILITA = 167;
+const FACTION_THE_SPURNED = 168;
+const FACTION_TREANTS_OF_JAGGEDPINE = 169;
+const FACTION_TRIBE_VRODAK = 170;
+const FACTION_TUNARES_SCOUTS = 171;
+const FACTION_UNDEAD_FROGLOKS_OF_GUK = 172;
+const FACTION_UNKEMPT_DRUIDS = 173;
+const FACTION_VERISH_MAL = 174;
+const FACTION_VOX = 175;
+const FACTION_WARRIORS_OF_GUKTA = 176;
+const FACTION_WHISTLING_FIST_BROTHERHOOD = 177;
+const FACTION_WIZARDS_OF_GUKTA = 178;
+const FACTION_WOLVES_OF_THE_NORTH = 179;
+const FACTION_ZAZAMOUKH = 180;
+const FACTION_BETRAYERS_OF_DIZOK = 181;
+const FACTION_BLOODGILLS = 182;
+const FACTION_BROOD_OF_DIZOK = 183;
+const FACTION_BROOD_OF_KOTIZ = 184;
+const FACTION_BURYNAI_LEGION = 185;
+const FACTION_CABILIS_RESIDENTS = 186;
+const FACTION_CITIZENS_OF_TORSIS = 187;
+const FACTION_CRUSADERS_OF_GREENMIST = 188;
+const FACTION_DRUSELLA_SATHIR = 189;
+const FACTION_FOLLOWERS_OF_KOROCUST = 190;
+const FACTION_FROGLOKS_OF_KRUP = 191;
+const FACTION_FROGLOKS_OF_KUNARK = 192;
+const FACTION_FROGLOKS_OF_SEBILIS = 193;
+const FACTION_GOBLINS_OF_CLEAVING_TOOTH = 194;
+const FACTION_GOBLINS_OF_MOUNTAIN_DEATH = 195;
+const FACTION_HORDE_OF_XALGOZ = 196;
+const FACTION_INHABITANTS_OF_FIRIONA_VIE = 197;
+const FACTION_LEGION_OF_CABILIS = 198;
+const FACTION_MINIONS_OF_SCALE = 199;
+const FACTION_PACK_OF_TOMAR = 200;
+const FACTION_PIRATES_OF_GUNTHAK = 201;
+const FACTION_RING_OF_SCALE = 202;
+const FACTION_SARNAK_COLLECTIVE = 203;
+const FACTION_SCALED_MYSTICS = 204;
+const FACTION_SPIROCS_OF_TIMOROUS = 205;
+const FACTION_SWIFT_TAILS = 206;
+const FACTION_SYRIK_ICEBLOOD = 207;
+const FACTION_THE_FORSAKEN = 208;
+const FACTION_THE_HOTWINGZ = 209;
+const FACTION_THE_KROMDEK = 210;
+const FACTION_THE_KROMDUL = 211;
+const FACTION_THRALL_OF_KLY = 212;
+const FACTION_TRAKANON = 213;
+const FACTION_TRUESPIRIT = 214;
+const FACTION_VENRIL_SATHIR = 215;
+const FACTION_ZORDAK_RAGEFIRE = 216;
+const FACTION_CLAN_GRIKBAR = 217;
+const FACTION_QUEEN_CRISTANOS_THEX = 218;
+const FACTION_ORACLE_OF_MARUD = 219;
+const FACTION_VEESHAN = 220;
+const FACTION_CHETARI = 221;
+const FACTION_CITIZENS_OF_FROSTSTONE = 222;
+const FACTION_CLAWS_OF_VEESHAN = 223;
+const FACTION_COLDAIN = 224;
+const FACTION_CRYSTAL_DENIZENS = 225;
+const FACTION_DAIN_FROSTREAVER_IV = 226;
+const FACTION_DENIZENS_OF_MISCHIEF = 227;
+const FACTION_DISCIPLES_OF_KERAFYRM = 228;
+const FACTION_GELISTIAL = 229;
+const FACTION_GEONID_COLLECTIVE = 230;
+const FACTION_GUARDIANS_OF_VEESHAN = 231;
+const FACTION_HOLGRESH = 232;
+const FACTION_JALED_DAR = 233;
+const FACTION_KING_TORMAX = 234;
+const FACTION_KROMRIF = 235;
+const FACTION_KROMZEK = 236;
+const FACTION_LITHINIATH = 237;
+const FACTION_OLD_DISCIPLES_OF_KERAFYRM = 238;
+const FACTION_OTHMIR = 239;
+const FACTION_PAEBALA = 240;
+const FACTION_PIRATES_OF_ICECLAD = 241;
+const FACTION_PROTECTORS_OF_GROWTH = 242;
+const FACTION_RYGORR_CLAN_SNOW_ORCS = 243;
+const FACTION_SERVANTS_OF_TUNARE = 244;
+const FACTION_SIRENS_OF_THE_GROTTO = 245;
+const FACTION_SNOWFANG_GNOLLS = 246;
+const FACTION_THE_SLEEPER = 247;
+const FACTION_TIZMAK_CLAN = 248;
+const FACTION_TSERRINA_SYLTOR = 249;
+const FACTION_TUNAREAN_COURT = 250;
+const FACTION_ULTHORK = 251;
+const FACTION_VELKETOR = 252;
+const FACTION_WARDERS_OF_THE_CLAW = 253;
+const FACTION_YELINAK = 254;
+const FACTION_ZLANDICAR = 255;
+const FACTION_AKHEVA = 256;
+const FACTION_PLACEHOLDER_257 = 257; // Unnamed faction
+const FACTION_PLACEHOLDER_258 = 258; // Unnamed faction
+
+
 //This would probably make more sense as a SQL table but github.io doesn't support PHP so here we are.
 
 var factionList = [
-	//	0
 	{
 		name			: "Agents of Mistmoore",
 		era				: 0,
 		importance		: importanceExpendable,
-		allies			: [101],
+		allies		: [FACTION_MAYONG_MISTMOORE],
 		enemies			: null,
 		description		: "Servants of the famous vampire found in his Faydwer castle, as well as his Drachnid agents in Kunark.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	1
 	{
 		name			: "Aggressors of Kithicor",
 		era				: 0,
@@ -29,7 +289,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	2
 	//TODO: VErify that killing Vole Ew doesn't raise this
 	{
 		name			: "Allize Taeew",
@@ -41,18 +300,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	3
 	{
 		name			: "Allize Volew",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [2],
+		enemies		: [FACTION_ALLIZE_TAEEW],
 		description		: "One of two clans of Lizardmen found in the Feerrott and Rathe Mountains.",
 		howToRaise		: "Slaughter the rival lizardmen of the Tae Ew clan, found throughout the Feerrott.",
-		factionsLowered	: [2],
+		factionsLowered		: [FACTION_ALLIZE_TAEEW],
 	},
-	//	4
 	{
 		name			: "Anchorites of Brell Serilis",
 		era				: 0,
@@ -63,62 +320,56 @@ var factionList = [
 		howToRaise		: "Complete the quest <a href='http://everquest.allakhazam.com/db/quest.html?quest=2176'>Snarla's friendship</a>.",
 		factionsLowered	: null,
 	},
-	//	5
 	{
 		name			: "Ankhefenmut",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [180],
+		enemies		: [FACTION_ZAZAMOUKH],
 		description		: "A sphinx and her scarab followers found in Rathe Mountains.",
 		howToRaise		: "Kill the rival sphinx Zazamoukh and her followers.",
-		factionsLowered	: [180],
+		factionsLowered		: [FACTION_ZAZAMOUKH],
 	},
-	//	6
 	{
 		name			: "Antonius Bayle",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,111],
-		enemies			: [81,202],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_MERCHANTS_OF_QEYNOS],
+		enemies		: [FACTION_KANE_BAYLE,FACTION_RING_OF_SCALE],
 		description		: "The leader of the city of Qeynos and some of his agents.",
 		howToRaise		: "Many quests in Qeynos will increase this faction. The easiest repeatable way is probably <a href='http://everquest.allakhazam.com/db/quest.html?quest=574'>giving bone chips to Lashun Novashine</a>.",
-		factionsLowered	: [11],
+		factionsLowered		: [FACTION_BLOODSABERS],
 	},
-	//	7
 	{
 		name			: "Arboreans of the Faydark",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [55,155,60,171],
+		enemies		: [FACTION_EMERALD_WARRIORS,FACTION_SOLDIERS_OF_TUNARE,FACTION_FAYDARKS_CHAMPIONS,FACTION_TUNARES_SCOUTS],
 		description		: "Small treants found in the greater Faydark. This faction is listed as Unimportant as it starts out non-KOS, but killing them does give boosts to some Kelethin factions so you may wish to treat this faction as expendable.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	8
 	{
 		name			: "Arcane Scientists",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [96],
-		enemies			: [124,167],
+		allies		: [FACTION_KNIGHTS_OF_TRUTH],
+		enemies		: [FACTION_OPAL_DARKBRIAR,FACTION_THE_FREEPORT_MILITA],
 		description		: "Freeport's spellcaster guild. Unfortunately it is not one of the factions increased by the PoR Freeport faction missions, so you'll still have to work on this faction the old fashioned way.",
 		howToRaise		: "The only way to improve this faction is by doing their quests. <a href='http://everquest.allakhazam.com/db/quest.html?quest=679'>Rat Ear Pie</a> is an easy one that can be done with store bought ingredients.",
-		factionsLowered	: [124,167],
+		factionsLowered		: [FACTION_OPAL_DARKBRIAR,FACTION_THE_FREEPORT_MILITA],
 	},
-	//	9
 	{
 		name			: "Ashen Order",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [96,153],
+		allies		: [FACTION_KNIGHTS_OF_TRUTH,FACTION_SILENT_FIST_CLAN],
 		enemies			: null,
 		description		: "Freeport's monk guild.",
 		howToRaise		: "Slaughter Deathfist orcs around Freeport. If you get tired of killing orcs the sash quests also provide a decent faction boosts, but require having enough faction to start.",
-		factionsLowered	: [40],
+		factionsLowered		: [FACTION_DEATHFIST_ORCS],
 	},
-	//	10
 	{
 		name			: "Befallen Inhabitants",
 		era				: 0,
@@ -129,29 +380,26 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	11
 	{
 		name			: "Bloodsabers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [124,29],
-		enemies			: [135,70],
+		allies		: [FACTION_OPAL_DARKBRIAR,FACTION_CORRUPT_QEYNOS_GUARDS],
+		enemies		: [FACTION_PRIESTS_OF_LIFE,FACTION_GUARDS_OF_QEYNOS],
 		description		: "Necromancers and shadowknights operating out of the catacombs under Qeynos.",
 		howToRaise		: "The easiest way to raise Bloodsaber faction is to slaughter the sacred koalindl fish in the pools around the Temple of Life. However, doing so will ruin your faction with several good Qeynos factions. If you want to preserve those factions you can <a href='http://everquest.allakhazam.com/db/quest.html?quest=2255'>buy Blackburrow Stout</a> from Guard Shilter in North Karana, which raises several evil Qeynos factions and only hurts Guards of Qeynos.",
-		factionsLowered	: [70],
+		factionsLowered		: [FACTION_GUARDS_OF_QEYNOS],
 	},
-	//	12
 	{
 		name			: "Broken Skull Clan",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [148,35],
+		enemies		: [FACTION_SHADOWKNIGHTS_OF_NIGHT_KEEP,FACTION_DABASHERS],
 		description		: "A band of troll pirates. Note that this does not include the Broken Skull Pirates in LoY zones. There is no way to raise this faction without hurting DaBashers faction so you'll have to pick one or the other. As this faction includes only 2 NPCs and one quest DaBashers are probably the better choice.",
 		howToRaise		: "Kill troll bashers.",
-		factionsLowered	: [35],
+		factionsLowered		: [FACTION_DABASHERS],
 	},
-	//	13
 	{
 		name			: "Brownies of Faydwer",
 		era				: 0,
@@ -162,7 +410,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	14
 	{
 		name			: "Burning Dead",
 		era				: 0,
@@ -173,73 +420,66 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	15
 	{
 		name			: "Butcherblock Bandits",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [114,162],
+		enemies		: [FACTION_MINERS_GUILD_628,FACTION_STORM_GUARD],
 		description		: "Dwarven bandits preying on travelers in the Butcherblock Mountains.",
 		howToRaise		: "The only way to raise this faction is to kill members of the Kaladim rogue guild, Miners Guild 628. While this has the added benefit of boosting your standing with the Qeynos and Neriak guilds, it will also hurt your standing with the Rivervale rogue guild.",
-		factionsLowered	: [114,42],
+		factionsLowered		: [FACTION_MINERS_GUILD_628,FACTION_DEEPPOCKETS],
 	},
-	//	16
 	{
 		name			: "Carson McCabe",
 		era				: 0,
 		importance		: importanceExpendable,
-		allies			: [77,108,27],
-		enemies			: [202],
+		allies		: [FACTION_HIGHPASS_GUARDS,FACTION_MERCHANTS_OF_HIGHPASS,FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND],
+		enemies		: [FACTION_RING_OF_SCALE],
 		description		: "The leader of Highkeep.",
 		howToRaise		: "This faction can be raised a few different ways but the easiest way that won't hurt other factions is <a href='http://everquest.allakhazam.com/db/quest.html?quest=262'>turning in scaps in Highpass</a>.",
 		factionsLowered	: null,
 	},
-	//	17
 	{
 		name			: "Circle of Unseen Hands",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [29,81],
-		enemies			: [70,111],
+		allies		: [FACTION_CORRUPT_QEYNOS_GUARDS,FACTION_KANE_BAYLE],
+		enemies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_MERCHANTS_OF_QEYNOS],
 		description		: "The Qeynos rogues guild. This faction has connections to many other Qeynos factions as well as rogue guilds in other cities, meaning many quests or kills in classic affect it one way or the other.",
 		howToRaise		: "There are quite a few options, but I recommend <a href='http://everquest.allakhazam.com/db/quest.html?quest=2255'>buying Blackburrow Stout</a> from Guard Shilster in North Karana. If you don't want to have to repair your Guards of Qeynos standing you can also kill Karana bandits.",
-		factionsLowered	: [70,82],
+		factionsLowered		: [FACTION_GUARDS_OF_QEYNOS,FACTION_KARANA_BANDITS],
 	},
-	//	18
 	{
 		name			: "Citizens of Gukta",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [139,75,100,71],
+		allies		: [FACTION_PROTECTORS_OF_GUKTA,FACTION_HIGH_COUNCIL_OF_GUKTA,FACTION_LOREKEEPERS_OF_GUKTA,FACTION_GUKTAN_ELDERS],
 		enemies			: null,
 		description		: "Froglok citizens.",
 		howToRaise		: "Deliver bone chips or fish to <a href='http://everquest.allakhazam.com/db/quest.html?quest=2318'>Dar Collector Reokar</a>.",
 		factionsLowered	: null,
 	},
-	//	19
 	{
 		name			: "Clan Kolbok",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [76,73],
+		enemies		: [FACTION_HIGH_GUARD_OF_ERUDIN,FACTION_HERETICS],
 		description		: "Kobolds found in The Warrens and Stonebrunt Mountains. Fighting them is a good way to earn faction with both Erudite cities.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	20
 	{
 		name			: "Clan Runnyeye",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [93,162,163,69],
+		enemies		: [FACTION_KING_XORBB,FACTION_STORM_GUARD,FACTION_STORM_REAPERS,FACTION_GUARDIANS_OF_THE_VALE],
 		description		: "One of the two clans of goblins living in Runnyeye and the surrounding zones.",
 		howToRaise		: "The easiest way to raise this faction is to kill King Xorbb and his followers. However, if you want to max unimportant factions then you will instead need to kill Mayor Gubbin. This will harm several Rivervale factions, but those can be repaired, and it's impossible to max Runnyeye, Pickclaw, and King Xorbb at the same time otherwise.",
-		factionsLowered	: [69,102,112,137],
+		factionsLowered		: [FACTION_GUARDIANS_OF_THE_VALE,FACTION_MAYOR_GUBBIN,FACTION_MERCHANTS_OF_RIVERVALE,FACTION_PRIESTS_OF_MISCHIEF],
 	},
-	//	21
 	{
 		name			: "Clerics of Gukta",
 		era				: 0,
@@ -250,29 +490,26 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	22
 	{
 		name			: "Clerics of Tunare",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [92],
+		allies		: [FACTION_KING_TEARIS_THEX],
 		enemies			: null,
 		description		: "Felwithe cleric guild.",
 		howToRaise		: "<a href='http://everquest.allakhazam.com/db/quest.html?quest=91'>Give bone chips</a> to Yeolarn Bronzeleaf.",
 		factionsLowered	: null,
 	},
-	//	23
 	{
 		name			: "Clerics of Underfoot",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [84,113],
+		allies		: [FACTION_KAZON_STORMHAMMER,FACTION_MINERS_GUILD_249],
 		enemies			: null,
 		description		: "Kaladim cleric Guild.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=366'>bone chips</a> to Gunlok Jure.",
 		factionsLowered	: null,
 	},
-	//	24
 	{
 		name			: "Clockworks of Ak'Anon",
 		era				: 0,
@@ -283,106 +520,96 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	25
 	{
 		name			: "Clurg",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [31,65,122],
-		enemies			: [84],
+		allies		: [FACTION_CRAKNEK_WARRIORS,FACTION_GREEN_BLOOD_KNIGHTS,FACTION_OGGOK_GUARDS],
+		enemies		: [FACTION_KAZON_STORMHAMMER],
 		description		: "The leader of the ogre city of Oggok.",
 		howToRaise		: "Doing quests for many Oggok factions will give allied hits for Clurg, but the only option that doesn't hurt other factions is to do quests for Oggok Guards, such as <a href='http://everquest.allakhazam.com/db/quest.html?quest=2473'>vermin extermination</a>.",
 		factionsLowered	: null,
 	},
-	//	26
 	{
 		name			: "Coalition of Tradefolk",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [27,96,111],
+		allies		: [FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND,FACTION_KNIGHTS_OF_TRUTH,FACTION_MERCHANTS_OF_QEYNOS],
 		enemies			: null,
 		description		: "Merchants of Freeport.",
 		howToRaise		: "Do the Citizens of Freeport missions introduced in Prophecy of Ro.",
 		factionsLowered	: null,
 	},
-	//	27
 	{
 		name			: "Coalition of Tradefolk Underground",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [16,26,29,167],
+		allies		: [FACTION_CARSON_MCCABE,FACTION_COALITION_OF_TRADEFOLK,FACTION_CORRUPT_QEYNOS_GUARDS,FACTION_THE_FREEPORT_MILITA],
 		enemies			: null,
 		description		: "Freeport's rogue guild and illicit merchants. Formerly called Coalition of Tradefolk Illegal.",
 		howToRaise		: "Deliver Tumpy Tonics to <a href='http://everquest.allakhazam.com/db/quest.html?quest=130'>Groflah Steadirt</a>. The tonics must be crafted but <a href='http://www.eqtraders.com/items/show_item.php?item=4968&menustr=035000000000'>the recipe</a> is not terribly difficult and uses vendor bought components.",
 		factionsLowered	: null,
 	},
-	//	28
 	{
 		name			: "Commons Residents",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [96,136,167],
+		allies		: [FACTION_KNIGHTS_OF_TRUTH,FACTION_PRIESTS_OF_MARR,FACTION_THE_FREEPORT_MILITA],
 		enemies			: null,
 		description		: "Residents of the Commonlands.",
 		howToRaise		: "Kill Deathfist Orcs.",
-		factionsLowered	: [40],
+		factionsLowered		: [FACTION_DEATHFIST_ORCS],
 	},
-	//	29
 	{
 		name			: "Corrupt Qeynos Guards",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [11,17,81],
-		enemies			: [70],
+		allies		: [FACTION_BLOODSABERS,FACTION_CIRCLE_OF_UNSEEN_HANDS,FACTION_KANE_BAYLE],
+		enemies		: [FACTION_GUARDS_OF_QEYNOS],
 		description		: "Corrupt Guards who support Kane Bayle. Note that though this faction and the non-corrupt guards are enemies, the good guards don't know who's corrupt so they will assist NPCs on this faction.",
 		howToRaise		: "Turn in <a href='http://everquest.allakhazam.com/db/quest.html?quest=262'>scalps</a> in Highpass.",
 		factionsLowered	: null,
 	},
-	//	30
 	{
 		name			: "Craftkeepers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [74,76],
-		enemies			: [73],
+		allies		: [FACTION_HIGH_COUNCIL_OF_ERUDIN,FACTION_HIGH_GUARD_OF_ERUDIN],
+		enemies		: [FACTION_HERETICS],
 		description		: "Erudin's enchanter guild.",
 		howToRaise		: "This faction has a couple of quests, but you'll probably find it far easier to head to Paineel and slaughter heretics.",
-		factionsLowered	: [73],
+		factionsLowered		: [FACTION_HERETICS],
 	},
-	//	31
 	{
 		name			: "Craknek Warriors",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [25],
-		enemies			: [65],
+		allies		: [FACTION_CLURG],
+		enemies		: [FACTION_GREEN_BLOOD_KNIGHTS],
 		description		: "Oggok warrior guild. Doing quests for this faction directly will hurt your Greenblood Knights faction. However, you can repair both this faction and Greenblood Knights by helping Clurg, at the expense of Kazon Stormhammer faction. Since repairing your Greenblood Knight faction would require damaging Kaladim factions anyway you might as well take the Clurg route.",
 		howToRaise		: "Bring pickled froglok to <a href='http://everquest.allakhazam.com/db/quest.html?quest=290'>Chef Dooga</a>.",
-		factionsLowered	: [84],
+		factionsLowered		: [FACTION_KAZON_STORMHAMMER],
 	},
-	//	32
 	{
 		name			: "Crimson Hands",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [74,76],
-		enemies			: [73],
+		allies		: [FACTION_HIGH_COUNCIL_OF_ERUDIN,FACTION_HIGH_GUARD_OF_ERUDIN],
+		enemies		: [FACTION_HERETICS],
 		description		: "Erudin's wizard guild.",
 		howToRaise		: "There are a few quests for this faction but you might find it easier to head to Paineel and slaughter heretics.",
-		factionsLowered	: [73],
+		factionsLowered		: [FACTION_HERETICS],
 	},
-	//	33
 	{
 		name			: "Crushbone Orcs",
 		era				: 0,
 		importance		: importanceUnimportant,
-		allies			: [78],
-		enemies			: [55,60,162],
+		allies		: [FACTION_INDIGO_BROTHERHOOD],
+		enemies		: [FACTION_EMERALD_WARRIORS,FACTION_FAYDARKS_CHAMPIONS,FACTION_STORM_GUARD],
 		description		: "A notorious clan of orcs found in Faydwer. It's possible to raise this faction but doing so will upset quite a few Kelethin factions. Repairing those factions without hurting this faction will prove difficult, so you may want to treat this faction as expendable unless you're roleplaying a Neriak aligned character.",
 		howToRaise		: "Kill members of the wood elf ranger guild.",
-		factionsLowered	: [22,60,92,155],
+		factionsLowered		: [FACTION_CLERICS_OF_TUNARE,FACTION_FAYDARKS_CHAMPIONS,FACTION_KING_TEARIS_THEX,FACTION_SOLDIERS_OF_TUNARE],
 	},
-	//	34
 	{
 		name			: "Cursed Frogloks of Gukta",
 		era				: 0,
@@ -393,106 +620,96 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	35
 	{
 		name			: "DaBashers",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [12],
+		enemies		: [FACTION_BROKEN_SKULL_CLAN],
 		description		: "Grobb warrior guild. It is impossible to raise this faction without hurting Broken Skull Clan and vice versa, but as the other has only 2 NPCs and one quest this is the more useful faction.",
 		howToRaise		: "Bring fire beetle eyes to <a href='http://everquest.allakhazam.com/db/quest.html?quest=3543'>Basher Nanrum</a>.",
-		factionsLowered	: [12],
+		factionsLowered		: [FACTION_BROKEN_SKULL_CLAN],
 	},
-	//	36
 	{
 		name			: "Dark Bargainers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [50,51],
+		allies		: [FACTION_DREADGUARD_INNER,FACTION_DREADGUARD_OUTER],
 		enemies			: null,
 		description		: "Merchants of Neriak. This faction is quite useful as it provides an easy way to raise both Dread Guard factions without harming any others.",
 		howToRaise		: "Give red wine to <a href='http://everquest.allakhazam.com/db/quest.html?quest=159'>Lokar To'Biath</a>",
 		factionsLowered	: null,
 	},
-	//	37
 	{
 		name			: "Dark Ones",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [148],
-		enemies			: [61],
+		allies		: [FACTION_SHADOWKNIGHTS_OF_NIGHT_KEEP],
+		enemies		: [FACTION_FROGLOKS_OF_GUK],
 		description		: "Shaman and beastlord guild in Grobb.",
 		howToRaise		: "Do quests for guild members, such as their <a href='http://everquest.allakhazam.com/db/quest.html?quest=1474'>armor quest</a>.",
-		factionsLowered	: [61],
+		factionsLowered		: [FACTION_FROGLOKS_OF_GUK],
 	},
-	//	38
 	{
 		name			: "Dark Reflection",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [41,54,63],
+		enemies		: [FACTION_DEEPMUSES,FACTION_ELDRITCH_COLLECTIVE,FACTION_GEM_CHOPPERS],
 		description		: "The gnome necromancer guild. In place of doing their quests you can kill members of the Eldritch Collective, which will hurt different factions but has the benefit of giving faction with The Dead.",
 		howToRaise		: "Fight the Eldritch Collective.",
-		factionsLowered	: [54,63,90],
+		factionsLowered		: [FACTION_ELDRITCH_COLLECTIVE,FACTION_GEM_CHOPPERS,FACTION_KING_AKANON],
 	},
-	//	39
 	{
 		name			: "Darkpaws of Jaggedpine",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [80,140,143],
+		enemies		: [FACTION_JAGGEDPINE_TREEFOLK,FACTION_PROTECTORS_OF_PINE,FACTION_RESIDENTS_OF_JAGGEDPINE],
 		description		: "Darkpaw gnolls found in the Jaggedpine Forest. Not to be confused with the Darkpaw Gnolls faction, a quest faction in Oceangreen Hills. Fighting this expendable faction is a great way to boost some nearby factions without hurting anything important.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	40
 	{
 		name			: "Deathfist Orcs",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [9,28,69,96],
+		enemies		: [FACTION_ASHEN_ORDER,FACTION_COMMONS_RESIDENTS,FACTION_GUARDIANS_OF_THE_VALE,FACTION_KNIGHTS_OF_TRUTH],
 		description		: "Orcs found in areas around Freeport and Rivervale. Fighting this expendable faction is a decent way to improve a few Freeport and Rivervale factions.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	41
 	{
 		name			: "Deepmuses",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [63,104],
-		enemies			: [38],
+		allies		: [FACTION_GEM_CHOPPERS,FACTION_MERCHANTS_OF_AKANON],
+		enemies		: [FACTION_DARK_REFLECTION],
 		description		: "Clerics and rogues of Ak'Anon",
 		howToRaise		: "Hunt members of Dark Reflection.",
-		factionsLowered	: [38],
+		factionsLowered		: [FACTION_DARK_REFLECTION],
 	},
-	//	42
 	{
 		name			: "Deeppockets",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [16,17,27],
-		enemies			: [112],
+		allies		: [FACTION_CARSON_MCCABE,FACTION_CIRCLE_OF_UNSEEN_HANDS,FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND],
+		enemies		: [FACTION_MERCHANTS_OF_RIVERVALE],
 		description		: "Rivervale's rogue guild. Also includes some  goblins.",
 		howToRaise		: "Deliver bandages to <a href='http://everquest.allakhazam.com/db/quest.html?quest=657'>to Joogl Honeybugger</a>.",
-		factionsLowered	: [27],
+		factionsLowered		: [FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND],
 	},
-	//	43
 	{
 		name			: "Deepwater Knights",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [74],
-		enemies			: [73],
+		allies		: [FACTION_HIGH_COUNCIL_OF_ERUDIN],
+		enemies		: [FACTION_HERETICS],
 		description		: "Erudin's paladin guild.",
 		howToRaise		: "Kill Heretics in Paineel.",
-		factionsLowered	: [73],
+		factionsLowered		: [FACTION_HERETICS],
 	},
-	//	44
 	{
 		name			: "Defective Clockwork",
 		era				: 0,
@@ -503,7 +720,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	45
 	{
 		name			: "Defenders of Kithicor",
 		era				: 0,
@@ -514,7 +730,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	46
 	{
 		name			: "Dervish Cutthroats",
 		era				: 0,
@@ -525,18 +740,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	47
 	{
 		name			: "Dismal Rage",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [124],
-		enemies			: [96],
+		allies		: [FACTION_OPAL_DARKBRIAR],
+		enemies		: [FACTION_KNIGHTS_OF_TRUTH],
 		description		: "Freeport's necromancers and shadowknights. You probably won't need to do much for this faction as you're likely to max it in the process of working on Opal Darkbriar. However, if you need to it's easy to improve this faction with the missions added in Prophecy of Ro.",
 		howToRaise		: "Do the Citizens of Freeport quests and missions introduced in PoR.",
 		factionsLowered	: null,
 	},
-	//	48
 	{
 		name			: "Donovon",
 		era				: 0,
@@ -547,7 +760,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	49
 	{
 		name			: "Drafling",
 		era				: 0,
@@ -558,29 +770,26 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	50
 	{
 		name			: "Dreadguard Inner",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [36,51,78],
-		enemies			: [138],
+		allies		: [FACTION_DARK_BARGAINERS,FACTION_DREADGUARD_OUTER,FACTION_INDIGO_BROTHERHOOD],
+		enemies		: [FACTION_PRIMORDIAL_MALICE],
 		description		: "Guards deeper within Neriak. They are less tolerant of other races than the foreign quarter guards.",
 		howToRaise		: "Give red wine to <a href='http://everquest.allakhazam.com/db/quest.html?quest=159'>Lokar To'Biath</a>",
 		factionsLowered	: null,
 	},
-	//	51
 	{
 		name			: "Dreadguard Outer",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [36,50,78],
-		enemies			: [55],
+		allies		: [FACTION_DARK_BARGAINERS,FACTION_DREADGUARD_INNER,FACTION_INDIGO_BROTHERHOOD],
+		enemies		: [FACTION_EMERALD_WARRIORS],
 		description		: "Guards in the Neriak Commons. They are more tolerant of other races than the guards in the innermost parts of Neriak.",
 		howToRaise		: "Give red wine to <a href='http://everquest.allakhazam.com/db/quest.html?quest=159'>Lokar To'Biath</a>",
 		factionsLowered	: null,
 	},
-	//	52
 	{
 		name			: "Dryads of the Grove",
 		era				: 0,
@@ -591,40 +800,36 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	53
 	{
 		name			: "Ebon Mask",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [16,69,70,179],
+		enemies		: [FACTION_CARSON_MCCABE,FACTION_GUARDIANS_OF_THE_VALE,FACTION_GUARDS_OF_QEYNOS,FACTION_WOLVES_OF_THE_NORTH],
 		description		: "Neriak rogue guild.",
 		howToRaise		: "Fight Shamen of Justice.",
-		factionsLowered	: [107, 150],
+		factionsLowered		: [FACTION_MERCHANTS_OF_HALAS, FACTION_SHAMEN_OF_JUSTICE],
 	},
-	//	54
 	{
 		name			: "Eldritch Collective",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [63,90],
-		enemies			: [38,166],
+		allies		: [FACTION_GEM_CHOPPERS,FACTION_KING_AKANON],
+		enemies		: [FACTION_DARK_REFLECTION,FACTION_THE_DEAD],
 		description		: "Ak'Anon caster guild.",
 		howToRaise		: "Fight The Dead.",
-		factionsLowered	: [166,218],
+		factionsLowered		: [FACTION_THE_DEAD,FACTION_QUEEN_CRISTANOS_THEX],
 	},
-	//	55
 	{
 		name			: "Emerald Warriors",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [87,106],
-		enemies			: [78],
+		allies		: [FACTION_KELETHIN_MERCHANTS,FACTION_MERCHANTS_OF_FELWITHE],
+		enemies		: [FACTION_INDIGO_BROTHERHOOD],
 		description		: "Kelethin's guard faction and warrior guild. Opposed to the Neriak warrior guild, but thankfully you can raise this faction without harming any important factions by killing aqua goblins.",
 		howToRaise		: "Hunt Riptide aqua goblins in Butcherblock Mountains and Lake Rathetear.",
-		factionsLowered	: [144],
+		factionsLowered		: [FACTION_RIPTIDE_GOBLINS],
 	},
-	//	56
 	{
 		name			: "Erudin Citizens",
 		era				: 0,
@@ -635,7 +840,6 @@ var factionList = [
 		howToRaise		: "Repeat <a href='http://everquest.allakhazam.com/db/quest.html?quest=131'>this quest.</a>",
 		factionsLowered	: null,
 	},
-	//	57
 	{
 		name			: "Exiled Frogloks",
 		era				: 0,
@@ -646,7 +850,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	58
 	{
 		name			: "Fairie",
 		era				: 0,
@@ -655,9 +858,8 @@ var factionList = [
 		enemies			: null,
 		description		: "Fairies found in Lesser Faydark. While raising this faction is doable, it will give smaller hits to other factions as you will have to do multiple quest turn ins to get the item you ultimately need for Fairie faction.",
 		howToRaise		: "Repeat <a href='http://everquest.allakhazam.com/db/quest.html?quest=92'>this quest.</a> You don't need to do the whole quest, just repair Sanfyrd's toupee so you get the fairie wing to give to Princess Joleena.",
-		factionsLowered	: [38,130],
+		factionsLowered		: [FACTION_DARK_REFLECTION,FACTION_PHINIGEL_AUTROPOS],
 	},
-	//	59
 	{
 		name			: "Fallen of Bloody Kithicor",
 		era				: 0,
@@ -666,20 +868,18 @@ var factionList = [
 		enemies			: null,
 		description		: "The undead of Kithicor Forest. The notorious band of Dark Elves are also in this faction.",
 		howToRaise		: "Kill Stanos Herkanor and <a href='http://everquest.allakhazam.com/db/quest.html?quest=1257'>turn in his head</a>.",
-		factionsLowered	: [16,29,77,108,167],
+		factionsLowered		: [FACTION_CARSON_MCCABE,FACTION_CORRUPT_QEYNOS_GUARDS,FACTION_HIGHPASS_GUARDS,FACTION_MERCHANTS_OF_HIGHPASS,FACTION_THE_FREEPORT_MILITA],
 	},
-	//	60
 	{
 		name			: "Faydarks Champions",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [22,92,155],
-		enemies			: [33],
+		allies		: [FACTION_CLERICS_OF_TUNARE,FACTION_KING_TEARIS_THEX,FACTION_SOLDIERS_OF_TUNARE],
+		enemies		: [FACTION_CRUSHBONE_ORCS],
 		description		: "Kelethin's ranger guild.",
 		howToRaise		: "The easiest way is to <a href='http://everquest.allakhazam.com/db/quest.html?quest=611'> give muffins to Pandos</a>. This will hurt your Crushbone Orcs faction, so if you care about that faction you can do <a href='http://everquest.allakhazam.com/db/quest.html?quest=158'>this quest</a> instead.",
 		factionsLowered	: null,
 	},
-	//	61	
 	{
 		name			: "Frogloks of Guk",
 		era				: 0,
@@ -688,53 +888,48 @@ var factionList = [
 		enemies			: null,
 		description		: "Frogloks living in Guk, not to be confused with the Guktan frogloks.",
 		howToRaise		: "Kill undead frogloks in Lower Guk. Alternately you can kill Frogloks in Sebilis, which will also hurt Trakanon faction but raise Frogloks of Krup and Legion of Cabilis.",
-		factionsLowered	: [172],
+		factionsLowered		: [FACTION_UNDEAD_FROGLOKS_OF_GUK],
 	},
-	//	62
 	{
 		name			: "Gate Callers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [74,76],
-		enemies			: [73],
+		allies		: [FACTION_HIGH_COUNCIL_OF_ERUDIN,FACTION_HIGH_GUARD_OF_ERUDIN],
+		enemies		: [FACTION_HERETICS],
 		description		: "Erudin's magician guild.",
 		howToRaise		: "Head to Paineel and kill Heretics.",
-		factionsLowered	: [73],
+		factionsLowered		: [FACTION_HERETICS],
 	},
-	//	63
 	{
 		name			: "Gem Choppers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [90,104],
-		enemies			: [38,217],
+		allies		: [FACTION_KING_AKANON,FACTION_MERCHANTS_OF_AKANON],
+		enemies		: [FACTION_DARK_REFLECTION,FACTION_CLAN_GRIKBAR],
 		description		: "Ak'Anon warrior guild.",
 		howToRaise		: "Kill Riptide aqua goblins.",
-		factionsLowered	: [144],
+		factionsLowered		: [FACTION_RIPTIDE_GOBLINS],
 	},
-	//	64
 	{
 		name			: "Goblins of Fire Peak",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [170],
+		enemies		: [FACTION_TRIBE_VRODAK],
 		description		: "Fire Goblins living in Lavastorm and the adjacent caverns. Diametrically opposed to Tribe Vrodak. You can raise one or the other but not both.",
 		howToRaise		: "Kill kobolds of Tribe Vrodak.",
-		factionsLowered	: [170],
+		factionsLowered		: [FACTION_TRIBE_VRODAK],
 	},
-	//	65
 	{
 		name			: "Green Blood Knights",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [25],
-		enemies			: [148,162],
+		allies		: [FACTION_CLURG],
+		enemies		: [FACTION_SHADOWKNIGHTS_OF_NIGHT_KEEP,FACTION_STORM_GUARD],
 		description		: "Oggok shadowknight guild.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	66
 	{
 		name			: "Grobb Guard",
 		era				: 0,
@@ -745,7 +940,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	67
 	{
 		name			: "Grobb Merchants",
 		era				: 0,
@@ -756,7 +950,6 @@ var factionList = [
 		howToRaise		: "Complete Grobb's <a href='http://everquest.allakhazam.com/db/faction.html?faction=283'> vermin extermination</a>.",
 		factionsLowered	: null,
 	},
-	//	68
 	{
 		name			: "Guardians of the Hatchling",
 		era				: 0,
@@ -767,73 +960,66 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	69	
 	{
 		name			: "Guardians of the Vale",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [102,112,163],
-		enemies			: [51],
+		allies		: [FACTION_MAYOR_GUBBIN,FACTION_MERCHANTS_OF_RIVERVALE,FACTION_STORM_REAPERS],
+		enemies		: [FACTION_DREADGUARD_OUTER],
 		description		: "Rivervale's guards.",
 		howToRaise		: "Kill Stone Hive bixies or Deathfist Orcs.",
-		factionsLowered	: [40,161],
+		factionsLowered		: [FACTION_DEATHFIST_ORCS,FACTION_STONE_HIVE_BIXIES],
 	},
-	//	70
 	{
 		name			: "Guards of Qeynos",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [6,111],
-		enemies			: [17,29],
+		allies		: [FACTION_ANTONIUS_BAYLE,FACTION_MERCHANTS_OF_QEYNOS],
+		enemies		: [FACTION_CIRCLE_OF_UNSEEN_HANDS,FACTION_CORRUPT_QEYNOS_GUARDS],
 		description		: "Guards of the city of Qeynos. This faction is either an ally or enemy of virtually every faction in Qeynos and the surrounding zones, making it easy to raise but also easy to hurt. Beware, even though they are mutual enemies with the Corrupt Qeynos Guards, the loyal guards don't know who is corrupt and will assist corrupt guards.",
 		howToRaise		: "The traditional way to improve this faction is to lay waste to Blackburrow. However, Sabertooths of Blackburrow faction can't be improved without hurting this faction, so if you're a completionist who wants to keep unimportant factions or just has a soft spot for the gnolls you can kill Karana Bandits instead. Alternately, you can do quests for certain allied factions with no enemies such as Silent Fist Clan or Karana Residents.",
-		factionsLowered	: [82],
+		factionsLowered		: [FACTION_KARANA_BANDITS],
 	},
-	//	71
 	{
 		name			: "Guktan Elders",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [75,100,139],
+		allies		: [FACTION_HIGH_COUNCIL_OF_GUKTA,FACTION_LOREKEEPERS_OF_GUKTA,FACTION_PROTECTORS_OF_GUKTA],
 		enemies			: null,
 		description		: "Elders of Gukta.",
 		howToRaise		: "Assist <a href='http://everquest.allakhazam.com/db/quest.html?quest=2318'>Dar Collector Reokar</a>.",
 		factionsLowered	: null,
 	},
-	//	72
 	{
 		name			: "Guktan Suppliers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [71,75,100,139],
+		allies		: [FACTION_GUKTAN_ELDERS,FACTION_HIGH_COUNCIL_OF_GUKTA,FACTION_LOREKEEPERS_OF_GUKTA,FACTION_PROTECTORS_OF_GUKTA],
 		enemies			: null,
 		description		: "Mercants of Gukta.",
 		howToRaise		: "Complete <a href='http://everquest.allakhazam.com/db/quest.html?quest=2605'>this quest</a>.",
 		factionsLowered	: null,
 	},
-	//	73
 	{
 		name			: "Heretics",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [30,32,43,62],
+		enemies		: [FACTION_CRAFTKEEPERS,FACTION_CRIMSON_HANDS,FACTION_DEEPWATER_KNIGHTS,FACTION_GATE_CALLERS],
 		description		: "Erudites living in the city of Paineel. You will likely ruin your standing with them while improving Erudin factions, but fortunately this faction can be repaired without harming Erudin factions by fighting kobolds.",
 		howToRaise		: "Kill kobolds in The Warrens and Stonebrunt Mountains.",
-		factionsLowered	: [19],
+		factionsLowered		: [FACTION_CLAN_KOLBOK],
 	},
-	//	74
 	{
 		name			: "High Council of Erudin",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [76],
-		enemies			: [73,89,202],
+		allies		: [FACTION_HIGH_GUARD_OF_ERUDIN],
+		enemies		: [FACTION_HERETICS,FACTION_KERRA_OF_BARREN_COAST,FACTION_RING_OF_SCALE],
 		description		: "The leaders of Erudin.",
 		howToRaise		: "Give Capt. Orlin's Spiced Ale to Palatos Kynarn as part of <a href='http://everquest.allakhazam.com/db/quest.html?quest=384'>this quest</a>. You can complete the whole quest for additional faction but it's faster to just turn in stacks of ale.",
-		factionsLowered	: [73],
+		factionsLowered		: [FACTION_HERETICS],
 	},
-	//	75
 	//TODO: Allies and enemies
 	{
 		name			: "High Council of Gukta",
@@ -845,40 +1031,36 @@ var factionList = [
 		howToRaise		: "Assist <a href='http://everquest.allakhazam.com/db/quest.html?quest=2318'>Dar Collector Reokar</a>.",
 		factionsLowered	: null,
 	},
-	//	76
 	{
 		name			: "High Guard of Erudin",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [74,105],
-		enemies			: [73,89],
+		allies		: [FACTION_HIGH_COUNCIL_OF_ERUDIN,FACTION_MERCHANTS_OF_ERUDIN],
+		enemies		: [FACTION_HERETICS,FACTION_KERRA_OF_BARREN_COAST],
 		description		: "Erudin guards.",
 		howToRaise		: "Kill kobolds in The Warrens and Stonebrunt Mountains.",
-		factionsLowered	: [19],
+		factionsLowered		: [FACTION_CLAN_KOLBOK],
 	},
-	//	77
 	{
 		name			: "Highpass Guards",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [16,29,108,167],
+		allies		: [FACTION_CARSON_MCCABE,FACTION_CORRUPT_QEYNOS_GUARDS,FACTION_MERCHANTS_OF_HIGHPASS,FACTION_THE_FREEPORT_MILITA],
 		enemies			: null,
 		description		: "Guards of Highpass.",
 		howToRaise		: "Hunt the Shralok Orcs and Mucktail gnolls in Highpass and the adjacent zones. Turn in their scalps for an extra boost.",
-		factionsLowered	: [116,152],
+		factionsLowered		: [FACTION_MUCKTAIL_GNOLLS,FACTION_SHRALOK_ORCS],
 	},
-	//	78
 	{
 		name			: "Indigo Brotherhood",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [55,138,160],
+		enemies		: [FACTION_EMERALD_WARRIORS,FACTION_PRIMORDIAL_MALICE,FACTION_STEEL_WARRIORS],
 		description		: "Neriak warrior guild.",
 		howToRaise		: "<a href='http://everquest.allakhazam.com/db/quest.html?quest=2482'>Exterminate vermin</a> in Neriak.",
-		factionsLowered	: [138],
+		factionsLowered		: [FACTION_PRIMORDIAL_MALICE],
 	},
-	//	79
 	{
 		name			: "Inhabitants of Hate",
 		era				: 0,
@@ -889,18 +1071,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	80
 	{
 		name			: "Jaggedpine Treefolk",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,140,164],
-		enemies			: [173],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_PROTECTORS_OF_PINE,FACTION_SUREFALL_PROTECTED_ANIMALS],
+		enemies		: [FACTION_UNKEMPT_DRUIDS],
 		description		: "Qeynos druid guild based in Surefall Glade.",
 		howToRaise		: "Kill Darkpaw gnolls in Jaggedpine Forest.",
-		factionsLowered	: [39],
+		factionsLowered		: [FACTION_DARKPAWS_OF_JAGGEDPINE],
 	},
-	//	81
 	//TODO: Allies and enemies
 	{
 		name			: "Kane Bayle",
@@ -910,75 +1090,68 @@ var factionList = [
 		enemies			: null,
 		description		: "The commander of the Qeynos guard and brother of Antonius Bayle. Secretly the leader of the corrupt guards and in league with the Bloodsabers. Unsure of allies and enemies as Kane himself, as a guildmaster, can't be killed, nor does he have quests, and no other NPCs appear to be on this faction.",
 		howToRaise		: "Buy Blackburow Stout from <a href='http://everquest.allakhazam.com/db/quest.html?quest=2255'>Guard Shilster'</a>.",
-		factionsLowered	: [70],
+		factionsLowered		: [FACTION_GUARDS_OF_QEYNOS],
 	},
-	//	82
 	{
 		name			: "Karana Bandits",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [17,70,77,83],
+		enemies		: [FACTION_CIRCLE_OF_UNSEEN_HANDS,FACTION_GUARDS_OF_QEYNOS,FACTION_HIGHPASS_GUARDS,FACTION_KARANA_RESIDENTS],
 		description		: "Bandits and brigands in the Plains of Karana.",
 		howToRaise		: "Kill Mucktail Gnolls",
-		factionsLowered	: [116],
+		factionsLowered		: [FACTION_MUCKTAIL_GNOLLS],
 	},
-	//	83
 	{
 		name			: "Karana Residents",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,95,135],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_KNIGHTS_OF_THUNDER,FACTION_PRIESTS_OF_LIFE],
 		enemies			: null,
 		description		: "Farmers and other residents of the Plains of Karana. As they have no enemies, doing quests for them is a good way to raise faction with their allies without hurting their respective enemies.",
 		howToRaise		: "Kill Mucktail Gnolls",
-		factionsLowered	: [116],
+		factionsLowered		: [FACTION_MUCKTAIL_GNOLLS],
 	},
-	//	84
 	{
 		name			: "Kazon Stormhammer",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [162],
-		enemies			: [25,101,202],
+		allies		: [FACTION_STORM_GUARD],
+		enemies		: [FACTION_CLURG,FACTION_MAYONG_MISTMOORE,FACTION_RING_OF_SCALE],
 		description		: "The ruler of Kaladim.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=366'>bone chips</a> to Gunlok Jure.",
 		factionsLowered	: null,
 	},
-	//	85
 	{
 		name			: "Keepers of the Arts",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [60,92],
-		enemies			: [166],
+		allies		: [FACTION_FAYDARKS_CHAMPIONS,FACTION_KING_TEARIS_THEX],
+		enemies		: [FACTION_THE_DEAD],
 		description		: "Felwithe caster guild.",
 		howToRaise		: "Give bat wings to <a href='http://everquest.allakhazam.com/db/quest.html?quest=89'>Niola Impholder</a>.",
-		factionsLowered	: [166],
+		factionsLowered		: [FACTION_THE_DEAD],
 	},
-	//	86
 	{
 		name			: "Kejek Village",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [129],
+		allies		: [FACTION_PEACE_KEEPERS],
 		enemies			: null,
 		description		: "Kejek living in Stonebrunt Mountains.",
 		howToRaise		: "Complete their quests, such as <a href='http://everquest.allakhazam.com/db/quest.html?quest=2906'>this one</a>.",
 		factionsLowered	: null,
 	},
-	//	87
 	{
 		name			: "Kelethin Merchants",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [55,60],
+		allies		: [FACTION_EMERALD_WARRIORS,FACTION_FAYDARKS_CHAMPIONS],
 		enemies			: null,
 		description		: "Merchants of Kelethin.",
 		howToRaise		: "The easiest way is to give wine to Lady Shae, but this will hurt your Indigo Brotherhood faction. If you prefer not to do that you can do <a href='http://everquest.allakhazam.com/db/quest.html?quest=4304'>this quest</a> instead. Killing Crushbone orcs would also hurt Indigo Brotherhood, but you can get around that by buying them or just use Deathfist items instead.",
 		factionsLowered	: null,
 	},
-	//	88
 	{
 		name			: "Kerra Isle",
 		era				: 0,
@@ -989,7 +1162,6 @@ var factionList = [
 		howToRaise		: "Do various quests for them. None stand out as exceptionally easy.",
 		factionsLowered	: null,
 	},
-	//	89
 	{
 		name			: "Kerra of Barren Coast",
 		era				: 0,
@@ -998,31 +1170,28 @@ var factionList = [
 		enemies			: null,
 		description		: "Kerrans living along the Barren Coast. As they don't appear to give faction hits when killed their allies and enemies cannot be determined.",
 		howToRaise		: "Kill members of High Council of Erudin, such as <a href='http://everquest.allakhazam.com/db/npc.html?id=12406'>Malik Zaren</a>. You can also kill Erudin Sentinels, which gives you far more options, but will ruin your Merchants of Erudin faction as well.",
-		factionsLowered	: [74,76],
+		factionsLowered		: [FACTION_HIGH_COUNCIL_OF_ERUDIN,FACTION_HIGH_GUARD_OF_ERUDIN],
 	},
-	//	90
 	{
 		name			: "King Ak'Anon",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [54,63],
-		enemies			: [38,103],
+		allies		: [FACTION_ELDRITCH_COLLECTIVE,FACTION_GEM_CHOPPERS],
+		enemies		: [FACTION_DARK_REFLECTION,FACTION_MELDRATH],
 		description		: "The ruler of Ak'Anon.",
 		howToRaise		: "Kill minotaurs, brownies, and other servants of Meldrath in Steamfont. If you want to align yourself with Meldrath and his gang  you can instead do quests for allied factions in Ak'Anon, but this is likely to hurt your standing with other factions like The Dead and Dark Reflection.",
-		factionsLowered	: [103],
+		factionsLowered		: [FACTION_MELDRATH],
 	},
-	//	91
 	{
 		name			: "King Naythox Thex",
 		era				: 0,
 		importance		: importanceUnimportant,
-		allies			: [78],
-		enemies			: [92,218,166],
+		allies		: [FACTION_INDIGO_BROTHERHOOD],
+		enemies		: [FACTION_KING_TEARIS_THEX,FACTION_QUEEN_CRISTANOS_THEX,FACTION_THE_DEAD],
 		description		: "The king of the dark elves. Opposed to the dark elf queen and her necromancer followers.",
 		howToRaise		: "There are two ways to raise this faction: fight members of the dark elf necromancer faction, The Dead, or do quests for the Priests of Innoruuk, which will hurt standing with the cleric guilds of several other cities. While fighting the Dead does have the advantage of raising other factions and only lowers that faction and the unimportant Queen Cristanos faction, it's a difficult faction to repair so you might find it preferable to go the priests route.",
-		factionsLowered	: [22,135,136,138],
+		factionsLowered		: [FACTION_CLERICS_OF_TUNARE,FACTION_PRIESTS_OF_LIFE,FACTION_PRIESTS_OF_MARR,FACTION_PRIMORDIAL_MALICE],
 	},
-	//	92
 	{
 		name			: "King Tearis Thex",
 		era				: 0,
@@ -1033,62 +1202,56 @@ var factionList = [
 		howToRaise		: "<a href='http://everquest.allakhazam.com/db/quest.html?quest=91'>Give bone chips</a> to Yeolarn Bronzeleaf.",
 		factionsLowered	: null,
 	},
-	//	93
 	{
 		name			: "King Xorbb",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [20,131],
+		enemies		: [FACTION_CLAN_RUNNYEYE,FACTION_PICKCLAW_GOBLINS],
 		description		: "The ruler of Beholder's Maze and his followers.",
 		howToRaise		: "Fight Pickclaw or Runnyeye goblins. Note that fighting this faction is the only way to raise Pickclaw faction, while Runnyeye can be raised other ways, albeit at the cost of mutliple Rivervale factions.",
-		factionsLowered	: [20],
+		factionsLowered		: [FACTION_CLAN_RUNNYEYE],
 	},
-	//	94
 	{
 		name			: "Kithicor Residents",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [80,140],
-		enemies			: [173],
+		allies		: [FACTION_JAGGEDPINE_TREEFOLK,FACTION_PROTECTORS_OF_PINE],
+		enemies		: [FACTION_UNKEMPT_DRUIDS],
 		description		: "Residents of the cursed forest of Kithicor.",
 		howToRaise		: "Hunt Shralok orcs.",
-		factionsLowered	: [152],
+		factionsLowered		: [FACTION_SHRALOK_ORCS],
 	},
-	//	95
 	{
 		name			: "Knights of Thunder",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,135],
-		enemies			: [11],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_PRIESTS_OF_LIFE],
+		enemies		: [FACTION_BLOODSABERS],
 		description		: "Clerics and paladins in Qeynos who worship Karana.",
 		howToRaise		: "There are no mobs you can kill for this faction, but there are numerous quests. The easiest repeatable way is probably <a href='http://everquest.allakhazam.com/db/quest.html?quest=574'>giving bone chips to Lashun Novashine</a>.",
-		factionsLowered	: [11],
+		factionsLowered		: [FACTION_BLOODSABERS],
 	},
-	//	96
 	{
 		name			: "Knights of Truth",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [136,160],
-		enemies			: [47,167],
+		allies		: [FACTION_PRIESTS_OF_MARR,FACTION_STEEL_WARRIORS],
+		enemies		: [FACTION_DISMAL_RAGE,FACTION_THE_FREEPORT_MILITA],
 		description		: "Freeport paladin guild. Famously opposed to the Freeport militia.",
 		howToRaise		: "Do the Citizens of Freeport missions introduced in Prophecy of Ro. If on a server without PoR then kill Deathfist orcs.",
 		factionsLowered	: null,
 	},
-	//	97
 	{
 		name			: "Kobolds of Fire Pit",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [156],
+		enemies		: [FACTION_SOLUSEK_MINING_CO],
 		description		: "Kobolds found in Solusek's Eye and Nagafen's Lair.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	98
 	{
 		name			: "Krag",
 		era				: 0,
@@ -1099,18 +1262,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	99
 	{
 		name			: "League of Antonican Bards",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,96],
-		enemies			: [101,202],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_KNIGHTS_OF_TRUTH],
+		enemies		: [FACTION_MAYONG_MISTMOORE,FACTION_RING_OF_SCALE],
 		description		: "The human and half elf bard guild. They have guild halls in the major human cities, but individual members are found in cities throughout the world. They are part of a 3 way conflict with Mayong Mistmoore and the Ring of Scale.",
 		howToRaise		: "Fight in Mistmoore Castle.",
-		factionsLowered	: [0,101],
+		factionsLowered		: [FACTION_AGENTS_OF_MISTMOORE,FACTION_MAYONG_MISTMOORE],
 	},
-	//	100
 	{
 		name			: "Lorekeepers of Gukta",
 		era				: 0,
@@ -1121,62 +1282,56 @@ var factionList = [
 		howToRaise		: "Deliver bone chips or fish to <a href='http://everquest.allakhazam.com/db/quest.html?quest=2318'>Dar Collector Reokar</a>.",
 		factionsLowered	: null,
 	},
-	//	101
 	{
 		name			: "Mayong Mistmoore",
 		era				: 0,
 		importance		: importanceUnimportant,
-		allies			: [0],
-		enemies			: [92,99,202],
+		allies		: [FACTION_AGENTS_OF_MISTMOORE],
+		enemies		: [FACTION_KING_TEARIS_THEX,FACTION_LEAGUE_OF_ANTONICAN_BARDS,FACTION_RING_OF_SCALE],
 		description		: "The famous vampire of Lesser Faydark.",
 		howToRaise		: "While the easiest way to raise this faction is to slaughter the Ring of Scale, it's impossible to repair the latter faction without harming this one. If you want to preseve as many factions as possible the best route for this faction is fight Drusella Sathir and her followers in Howling Stones. This will hurt Venril Sathir faction, but that can be repaired.",
-		factionsLowered	: [189,215],
+		factionsLowered		: [FACTION_DRUSELLA_SATHIR,FACTION_VENRIL_SATHIR],
 	},
-	//	102
 	{
 		name			: "Mayor Gubbin",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [69,112,137],
-		enemies			: [20],
+		allies		: [FACTION_GUARDIANS_OF_THE_VALE,FACTION_MERCHANTS_OF_RIVERVALE,FACTION_PRIESTS_OF_MISCHIEF],
+		enemies		: [FACTION_CLAN_RUNNYEYE],
 		description		: "The mayor of Rivervale",
 		howToRaise		: "Deliver bandages to <a href='http://everquest.allakhazam.com/db/quest.html?quest=657'>to Joogl Honeybugger</a>.",
-		factionsLowered	: [27],
+		factionsLowered		: [FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND],
 	},
-	//	103
 	{
 		name			: "Meldrath",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [63,90],
+		enemies		: [FACTION_GEM_CHOPPERS,FACTION_KING_AKANON],
 		description		: "The infamous gnome and his followers in Steamfont Mountains.",
 		howToRaise		: "Kill NPCs on King Ak'Anon faction. Aside from the king himself, this includes a few other gnomes and a number of clockworks around the city.",
-		factionsLowered	: [54,63,90],
+		factionsLowered		: [FACTION_ELDRITCH_COLLECTIVE,FACTION_GEM_CHOPPERS,FACTION_KING_AKANON],
 	},
-	//	104
 	{
 		name			: "Merchants of Ak'Anon",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [41,63,90],
+		allies		: [FACTION_DEEPMUSES,FACTION_GEM_CHOPPERS,FACTION_KING_AKANON],
 		enemies			: null,
 		description		: "Merchants of the gnome city in Faydwer.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=3548'>Vasty Deep Ale to Shondo Billin</a>.",
-		factionsLowered	: [217,38],
+		factionsLowered		: [FACTION_CLAN_GRIKBAR,FACTION_DARK_REFLECTION],
 	},
-	//	105
 	{
 		name			: "Merchants of Erudin",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [74,76],
+		allies		: [FACTION_HIGH_COUNCIL_OF_ERUDIN,FACTION_HIGH_GUARD_OF_ERUDIN],
 		enemies			: null,
 		description		: "Mercants of the Erudite city on Odus.",
 		howToRaise		: "Deliver Wooden Shards to Emil Parsini as part pf <a href='http://everquest.allakhazam.com/db/quest.html?quest=149'>this quest</a>. The shards are dropped by treants, but you might find it easier to get them by giving Small Lanterns to Jyle Windshot as part of <a href='http://everquest.allakhazam.com/db/quest.html?quest=178'>this quest</a>. The turn in will damage your Crushbone Orc standing, but the shards are tradeable so this can be done on an alt to avoid the negative hit if desired.",
 		factionsLowered	: null,
 	},
-	//	106
 	{
 		name			: "Merchants of Felwithe",
 		era				: 0,
@@ -1185,42 +1340,38 @@ var factionList = [
 		enemies			: null,
 		description		: "Merchants of the high elf city in Faydwer.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=4304'>wine to Lady Shae</a>.",
-		factionsLowered	: [78],
+		factionsLowered		: [FACTION_INDIGO_BROTHERHOOD],
 	},
-	//	107
 	{
 		name			: "Merchants of Halas",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [150,179],
+		allies		: [FACTION_SHAMEN_OF_JUSTICE,FACTION_WOLVES_OF_THE_NORTH],
 		enemies			: null,
 		description		: "Merchants of the barbarian city in Northern Antonica.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=224'>polar bear skins</a> or <a href='http://everquest.allakhazam.com/db/quest.html?quest=717'>wratch orc wristbands</a> to Cindl.",
 		factionsLowered	: null,
 	},
-	//	108
 	{
 		name			: "Merchants of Highpass",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [16,77],
+		allies		: [FACTION_CARSON_MCCABE,FACTION_HIGHPASS_GUARDS],
 		enemies			: null,
 		description		: "Merchants of the human city in central Antonica.",
 		howToRaise		: "Turn in <a href='http://everquest.allakhazam.com/db/quest.html?quest=262'>orc</a> or <a href='http://everquest.allakhazam.com/db/quest.html?quest=263'>gnoll</a> scalps.",
 		factionsLowered	: null,
 	},
-	//	109
 	{
 		name			: "Merchants of Kaladim",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [84,113,162],
-		enemies			: [114],
+		allies		: [FACTION_KAZON_STORMHAMMER,FACTION_MINERS_GUILD_249,FACTION_STORM_GUARD],
+		enemies		: [FACTION_MINERS_GUILD_628],
 		description		: "Merchants of the dwarf city on Faydwer.",
 		howToRaise		: "Bring <a href='http://everquest.allakhazam.com/db/quest.html?quest=642'>Tumpy Tonics</a> to Trantor Everhot.",
-		factionsLowered	: [31],
+		factionsLowered		: [FACTION_CRAKNEK_WARRIORS],
 	},
-	//	110
 	{
 		name			: "Merchants of Oggok",
 		era				: 0,
@@ -1231,51 +1382,46 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	111
 	{
 		name			: "Merchants of Qeynos",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [6,26,70],
-		enemies			: [17],
+		allies		: [FACTION_ANTONIUS_BAYLE,FACTION_COALITION_OF_TRADEFOLK,FACTION_GUARDS_OF_QEYNOS],
+		enemies		: [FACTION_CIRCLE_OF_UNSEEN_HANDS],
 		description		: "Merchants of the human city in western Antonica. Not a difficult faction to raise, but also easy to hurt if working on improving some of the shadier factions.",
 		howToRaise		: "The most straightforward way is to lay waste to Blackburrow, but if you prefer to stay friendly with the gnolls you can <a href='http://everquest.allakhazam.com/db/quest.html?quest=130'>bring Tumpy Tonics to Groflah Steadirt</a>.",
-		factionsLowered	: [146],
+		factionsLowered		: [FACTION_SABERTOOTHS_OF_BLACKBURROW],
 	},
-	//	112
 	{
 		name			: "Merchants of Rivervale",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [42,69,102],
-		enemies			: [27],
+		allies		: [FACTION_DEEPPOCKETS,FACTION_GUARDIANS_OF_THE_VALE,FACTION_MAYOR_GUBBIN],
+		enemies		: [FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND],
 		description		: "Merchants of the halfling city in central Antonica.",
 		howToRaise		: "Deliver bandages to <a href='http://everquest.allakhazam.com/db/quest.html?quest=657'>to Joogl Honeybugger</a>.",
-		factionsLowered	: [27],
+		factionsLowered		: [FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND],
 	},
-	//	113
 	{
 		name			: "Miners Guild 249",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [23,84,162],
+		allies		: [FACTION_CLERICS_OF_UNDERFOOT,FACTION_KAZON_STORMHAMMER,FACTION_STORM_GUARD],
 		enemies			: null,
 		description		: "Dwarven miners in the mines of Kaladim.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=366'>bone chips</a> to Gunlok Jure.",
 		factionsLowered	: null,
 	},
-	//	114
 	{
 		name			: "Miners Guild 628",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [42],
-		enemies			: [15,17,53],
+		allies		: [FACTION_DEEPPOCKETS],
+		enemies		: [FACTION_BUTCHERBLOCK_BANDITS,FACTION_CIRCLE_OF_UNSEEN_HANDS,FACTION_EBON_MASK],
 		description		: "Kaladim rogue guild. Whether by questing or killing, it appears to be impossible to raise this faction without harming the unimportant Butcherblock Bandits faction and vice versa.",
 		howToRaise		: "Fight Butcherblock bandits.",
-		factionsLowered	: [15],
+		factionsLowered		: [FACTION_BUTCHERBLOCK_BANDITS],
 	},
-	//	115
 	{
 		name			: "Minions of Underfoot",
 		era				: 0,
@@ -1286,29 +1432,26 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	116
 	{
 		name			: "Mucktail Gnolls",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [77,82,83],
+		enemies		: [FACTION_HIGHPASS_GUARDS,FACTION_KARANA_BANDITS,FACTION_KARANA_RESIDENTS],
 		description		: "A clan of gnolls found in the area around Highpass.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	117
 	{
 		name			: "Nagafen",
 		era				: 0,
 		importance		: importanceExpendable,
-		allies			: [175],
-		enemies			: [156],
+		allies		: [FACTION_VOX],
+		enemies		: [FACTION_SOLUSEK_MINING_CO],
 		description		: "The famous fire dragon and his followers living in the caves below Lavastorm.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	118
 	{
 		name			: "Najena",
 		era				: 0,
@@ -1319,7 +1462,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	119
 	{
 		name			: "Neriak Ghoul",
 		era				: 0,
@@ -1330,7 +1472,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	120
 	{
 		name			: "Neriak Ogre",
 		era				: 0,
@@ -1341,7 +1482,6 @@ var factionList = [
 		howToRaise		: "The only way to raise this faction is to <a href='http://everquest.allakhazam.com/db/quest.html?quest=291'>deliver preserved frog legs to The Gobbler</a>. At +5 faction per turn in this will take quite a few trips from Oggok to Neriak.",
 		factionsLowered	: null,
 	},
-	//	121
 	{
 		name			: "Neriak Troll",
 		era				: 0,
@@ -1352,18 +1492,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	122
 	{
 		name			: "Oggok Guards",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [25],
+		allies		: [FACTION_CLURG],
 		enemies			: null,
 		description		: "Ogre city guards.",
 		howToRaise		: "Help the ogres <a href='http://everquest.allakhazam.com/db/quest.html?quest=2473'>exterminate vermin</a>. If you don't fancy slaughtering countless armadillos you can also do Clurg quests like <a href='http://everquest.allakhazam.com/db/quest.html?quest=290'>pickled froglok</a> at the expense of Kazon Stormhammer faction.",
-		factionsLowered	: [84],
+		factionsLowered		: [FACTION_KAZON_STORMHAMMER],
 	},
-	//	123
 	{
 		name			: "Oggok Resident",
 		era				: 0,
@@ -1372,75 +1510,68 @@ var factionList = [
 		enemies			: null,
 		description		: "Ogre citizens.",
 		howToRaise		: "The only way to increase this faction is by completing <a href='http://everquest.allakhazam.com/db/quest.html?quest=278'>this quest</a>. Killing the slayers will wreck DaBashers faction, but the drops are tradeable so this can be avoided.",
-		factionsLowered	: [35],
+		factionsLowered		: [FACTION_DABASHERS],
 	},
-	//	124
 	{
 		name			: "Opal Darkbriar",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [11,38,47,166],
+		allies		: [FACTION_BLOODSABERS,FACTION_DARK_REFLECTION,FACTION_DISMAL_RAGE,FACTION_THE_DEAD],
 		enemies			: null,
 		description		: "Leader of the Dismal Rage. An alternate version of her leads the Freeport caster guild, but this faction applies to the dark elf version of her.",
 		howToRaise		: "Deliver bone chips, fire beetle eyes, or spiderling silk to <a href='http://everquest.allakhazam.com/db/quest.html?quest=127'>Xelha Nevagon</a>.",
-		factionsLowered	: [96],
+		factionsLowered		: [FACTION_KNIGHTS_OF_TRUTH],
 	},
-	//	125
 	{
 		name			: "Oracle of K'Arnon",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [219],
+		enemies		: [FACTION_ORACLE_OF_MARUD],
 		description		: "An oracle found in the Ocean of Tears.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=65>the books</a> the oracle wants.",
-		factionsLowered	: [219],
+		factionsLowered		: [FACTION_ORACLE_OF_MARUD],
 	},
-	//	126
 	{
 		name			: "Order of Three",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70],
-		enemies			: [11,124],
+		allies		: [FACTION_GUARDS_OF_QEYNOS],
+		enemies		: [FACTION_BLOODSABERS,FACTION_OPAL_DARKBRIAR],
 		description		: "Qeynos caster guild.",
 		howToRaise		: "Deliver blank scrolls to <a href='http://everquest.allakhazam.com/db/quest.html?quest=505'>Kazlo Naedra</a>. ",
-		factionsLowered	: [11,124],
+		factionsLowered		: [FACTION_BLOODSABERS,FACTION_OPAL_DARKBRIAR],
 	},
-	//	127
 	{
 		name			: "Paladins of Gukta",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [71,75,100,139],
+		allies		: [FACTION_GUKTAN_ELDERS,FACTION_HIGH_COUNCIL_OF_GUKTA,FACTION_LOREKEEPERS_OF_GUKTA,FACTION_PROTECTORS_OF_GUKTA],
 		enemies			: null,
 		description		: "Forglok paladin guild.",
 		howToRaise		: "Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=2361'>Fipok Glubble's head to Shin Master Grubbus</a>.",
 		factionsLowered	: null,
 	},
-	//	128
 	{
 		name			: "Paladins of Underfoot",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [23,84,113],
-		enemies			: [220],
+		allies		: [FACTION_CLERICS_OF_UNDERFOOT,FACTION_KAZON_STORMHAMMER,FACTION_MINERS_GUILD_249],
+		enemies		: [FACTION_VEESHAN],
 		description		: "Kaladim paladins. Note that most of the actual paladin guild NPCs are part of Clerics of Underfoot. This faction appears to belong to only a handful of NPCs.",
 		howToRaise		: "Complete <a href='http://everquest.allakhazam.com/db/quest.html?quest=116'>this quest</a>. Unfortunately it appears that charm doesn't bring you quite high enough to start the quest, so it may be impossible to raise this faction if you don't have enough faction to begin with.",
-		factionsLowered	: [173,220],
+		factionsLowered		: [FACTION_UNKEMPT_DRUIDS,FACTION_VEESHAN],
 	},
-	//	129
 	{
 		name			: "Peace Keepers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [74],
-		enemies			: [73],
+		allies		: [FACTION_HIGH_COUNCIL_OF_ERUDIN],
+		enemies		: [FACTION_HERETICS],
 		description		: "Erudite clerics and paladins of Quellious.",
 		howToRaise		: "If you want to max Kejek Village then do their quests and raise both that faction and this one together. If you don't care about Kejek Village (or somehow capped it without capping this one) then you can also <a href='http://everquest.allakhazam.com/db/quest.html?quest=157'>turn in bone chips</a> although this will hurt Heretic faction.",
-		factionsLowered	: [73],
+		factionsLowered		: [FACTION_HERETICS],
 	},
-	//	130
 	{
 		name			: "Phinigel Autropos",
 		era				: 0,
@@ -1451,29 +1582,26 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	131
 	{
 		name			: "Pickclaw Goblins",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [69,93],
+		enemies		: [FACTION_GUARDIANS_OF_THE_VALE,FACTION_KING_XORBB],
 		description		: "One of the two goblin clans living in Runnyeye.",
 		howToRaise		: "Fight King Xorbb and his followers.",
-		factionsLowered	: [93],
+		factionsLowered		: [FACTION_KING_XORBB],
 	},
-	//	132
 	{
 		name			: "Pirates of the Pine",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [143],
+		enemies		: [FACTION_RESIDENTS_OF_JAGGEDPINE],
 		description		: "Priates and poachers of Jaggedpine Forest. Can't be raised but doesn't start KOS so considered unimportant.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	133
 	{
 		name			: "Pixies of Faydwer",
 		era				: 0,
@@ -1484,51 +1612,46 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	134
 	{
 		name			: "Priests of Innoruuk",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [91],
-		enemies			: [22,135,136,138],
+		allies		: [FACTION_KING_NAYTHOX_THEX],
+		enemies		: [FACTION_CLERICS_OF_TUNARE,FACTION_PRIESTS_OF_LIFE,FACTION_PRIESTS_OF_MARR,FACTION_PRIMORDIAL_MALICE],
 		description		: "Neriak cleric guild. They are loyal to the king and oppose the queen and her followers.",
 		howToRaise		: "Repeat the first part of <a href='http://everquest.allakhazam.com/db/quest.html?quest=8094'>this quest</a>.",
-		factionsLowered	: [22,135,136,138],
+		factionsLowered		: [FACTION_CLERICS_OF_TUNARE,FACTION_PRIESTS_OF_LIFE,FACTION_PRIESTS_OF_MARR,FACTION_PRIMORDIAL_MALICE],
 	},
-	//	135
 	{
 		name			: "Priests of Life",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [6,70,95],
-		enemies			: [11],
+		allies		: [FACTION_ANTONIUS_BAYLE,FACTION_GUARDS_OF_QEYNOS,FACTION_KNIGHTS_OF_THUNDER],
+		enemies		: [FACTION_BLOODSABERS],
 		description		: "Clerics and paladins who worship Rodcet Nife in Qeynos.",
 		howToRaise		: "Bring bone chips to <a href='http://everquest.allakhazam.com/db/quest.html?quest=574'>Lashun Novashine</a>.",
-		factionsLowered	: [11],
+		factionsLowered		: [FACTION_BLOODSABERS],
 	},
-	//	136
 	{
 		name			: "Priests of Marr",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [96],
-		enemies			: [167],
+		allies		: [FACTION_KNIGHTS_OF_TRUTH],
+		enemies		: [FACTION_THE_FREEPORT_MILITA],
 		description		: "Clerics who worship the twins Marr in Freeport.",
 		howToRaise		: "Complete the Citizens of Freeport missions added in Prophecy of Ro.",
 		factionsLowered	: null,
 	},
-	//	137
 	{
 		name			: "Priests of Mischief",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [69,102],
+		allies		: [FACTION_GUARDIANS_OF_THE_VALE,FACTION_MAYOR_GUBBIN],
 		enemies			: null,
 		description		: "Rivervale cleric guild.",
 		howToRaise		: "There are only a handful of quests to raise this faction and they all require some hunting, but <a href='http://everquest.allakhazam.com/db/quest.html?quest=773'>this one</a> might be the easiest.",
 		factionsLowered	: null,
 	},
-	//	138
 	{
 		name			: "Primordial Malice",
 		era				: 0,
@@ -1537,9 +1660,8 @@ var factionList = [
 		enemies			: null,
 		description		: "Followers of Lanys T'Vyl. They don't get along with most Neriak factions. Somewhat unique in that it appears to be the only faction where the secondary hits you get for interacting with other factions are larger than the hits to other faction, making this faction quick to be increased or decreased. NPCs no longer seem to be in game, although it is still in the faction window.",
 		howToRaise		: "Fight members of the Indigo Brotherhood.",
-		factionsLowered	: [78],
+		factionsLowered		: [FACTION_INDIGO_BROTHERHOOD],
 	},
-	//	139
 	{
 		name			: "Protectors of Gukta",
 		era				: 0,
@@ -1550,18 +1672,16 @@ var factionList = [
 		howToRaise		: "Bring items to <a href='http://everquest.allakhazam.com/db/quest.html?quest=2318'>Dar Collector Reokar</a>.",
 		factionsLowered	: null,
 	},
-	//	140
 	{
 		name			: "Protectors of Pine",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,80],
-		enemies			: [146],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_JAGGEDPINE_TREEFOLK],
+		enemies		: [FACTION_SABERTOOTHS_OF_BLACKBURROW],
 		description		: "Qeynos ranger guild.",
 		howToRaise		: "Kill Darkpaw gnolls in Jaggedpine Forest.",
-		factionsLowered	: [39],
+		factionsLowered		: [FACTION_DARKPAWS_OF_JAGGEDPINE],
 	},
-	//	141
 	{
 		name			: "Qeynos Citizens",
 		era				: 0,
@@ -1572,7 +1692,6 @@ var factionList = [
 		howToRaise		: "Do quests for NPCs on this faction such as <a href='http://everquest.allakhazam.com/db/npc.html?id=2779'>Menkes Tabolet</a>.",
 		factionsLowered	: null,
 	},
-	//	142
 	{
 		name			: "Qeynos Elite Watch",
 		era				: 0,
@@ -1583,29 +1702,26 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	143
 	{
 		name			: "Residents of Jaggedpine",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,80,140],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_JAGGEDPINE_TREEFOLK,FACTION_PROTECTORS_OF_PINE],
 		enemies			: null,
 		description		: "Residents of the Jaggedpine Forest.",
 		howToRaise		: "Kill Darkpaw gnolls in Jaggedpine Forest.",
-		factionsLowered	: [39],
+		factionsLowered		: [FACTION_DARKPAWS_OF_JAGGEDPINE],
 	},
-	//	144
 	{
 		name			: "Riptide Goblins",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [55,63,162],
+		enemies		: [FACTION_EMERALD_WARRIORS,FACTION_GEM_CHOPPERS,FACTION_STORM_GUARD],
 		description		: "Aqua goblins found in the waters of Western Faydwer and Eastern Antonica.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	145
 	{
 		name			: "Rogues of the White Rose",
 		era				: 0,
@@ -1614,42 +1730,38 @@ var factionList = [
 		enemies			: null,
 		description		: "Halas rogue guild.",
 		howToRaise		: "There are only two options for raising this faction, either <a href='http://everquest.allakhazam.com/db/quest.html?quest=1026'>kill lots of gnolls</a> or <a href='http://everquest.allakhazam.com/db/quest.html?quest=980'>kill lots of mammoths.",
-		factionsLowered	: [146],
+		factionsLowered		: [FACTION_SABERTOOTHS_OF_BLACKBURROW],
 	},
-	//	146
 	{
 		name			: "Sabertooths of Blackburrow",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [70,80,111,153],
+		enemies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_JAGGEDPINE_TREEFOLK,FACTION_MERCHANTS_OF_QEYNOS,FACTION_SILENT_FIST_CLAN],
 		description		: "A large gnoll clan occupying the areas around Qeynos.",
 		howToRaise		: "Fight Protectors of Pine.",
-		factionsLowered	: [70,80,140],
+		factionsLowered		: [FACTION_GUARDS_OF_QEYNOS,FACTION_JAGGEDPINE_TREEFOLK,FACTION_PROTECTORS_OF_PINE],
 	},
-	//	147
 	{
 		name			: "Shadowed Men",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [165],
+		enemies		: [FACTION_TEMPLE_OF_SOLUSEK_RO],
 		description		: "Invisible beings found throughout Norrath. Impossible to raise without hurting Temple of Solusek Ro and vice versa.",
 		howToRaise		: "Fight in the Temple of Solusek Ro.",
-		factionsLowered	: [165],
+		factionsLowered		: [FACTION_TEMPLE_OF_SOLUSEK_RO],
 	},
-	//	148
 	{
 		name			: "Shadowknights of Night Keep",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [35],
-		enemies			: [12,65],
+		allies		: [FACTION_DABASHERS],
+		enemies		: [FACTION_BROKEN_SKULL_CLAN,FACTION_GREEN_BLOOD_KNIGHTS],
 		description		: "Grobb Shadowknight guild.",
 		howToRaise		: "Do quests for the Dark Ones, such as their <a href='http://everquest.allakhazam.com/db/quest.html?quest=1474'>armor quests</a>.",
-		factionsLowered	: [61],
+		factionsLowered		: [FACTION_FROGLOKS_OF_GUK],
 	},
-	//	149
 	{
 		name			: "Shaman of Gukta",
 		era				: 0,
@@ -1660,18 +1772,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	150
 	{
 		name			: "Shamen of Justice",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [107],
-		enemies			: [17,27,53],
+		allies		: [FACTION_MERCHANTS_OF_HALAS],
+		enemies		: [FACTION_CIRCLE_OF_UNSEEN_HANDS,FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND,FACTION_EBON_MASK],
 		description		: "Halas shaman guild.",
 		howToRaise		: "You can do quests for this faction directly but this will hurt a few other factions. Alternately you can do quests for Merchants of Halas, which will also raise this and Wolves of the North at no cost to other factions. Deliver <a href='http://everquest.allakhazam.com/db/quest.html?quest=224'>polar bear skins</a> or <a href='http://everquest.allakhazam.com/db/quest.html?quest=717'>wratch orc wristbands</a> to Cindl.",
 		factionsLowered	: null,
 	},
-	//	151
 	{
 		name			: "Shamen of War",
 		era				: 0,
@@ -1680,31 +1790,28 @@ var factionList = [
 		enemies			: null,
 		description		: "Oggok shaman and beastlord guild.",
 		howToRaise		: "Do quests such as <a href='http://everquest.allakhazam.com/db/quest.html?quest=1467'>their newbie armor quests</a>. Most of the drops they want come from lizardmen so you're likely to have to hurt your lizard man factions, although it is avoidable.",
-		factionsLowered	: [2,3],
+		factionsLowered		: [FACTION_ALLIZE_TAEEW,FACTION_ALLIZE_VOLEW],
 	},
-	//	152
 	{
 		name			: "Shralok Orcs",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [77,94],
+		enemies		: [FACTION_HIGHPASS_GUARDS,FACTION_KITHICOR_RESIDENTS],
 		description		: "Orcs found in Kithicor Forest and the surrounding area.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	153
 	{
 		name			: "Silent Fist Clan",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [9,70],
+		allies		: [FACTION_ASHEN_ORDER,FACTION_GUARDS_OF_QEYNOS],
 		enemies			: null,
 		description		: "Qeynos monk guild.",
 		howToRaise		: "You can get some decently large faction hits from doing their <a href='http://everquest.allakhazam.com/db/quest.html?quest=515'>headband quests</a>, or you can lay waste to Blackburrow.",
-		factionsLowered	: [146],
+		factionsLowered		: [FACTION_SABERTOOTHS_OF_BLACKBURROW],
 	},
-	//	154
 	{
 		name			: "Sky Talons",
 		era				: 0,
@@ -1715,29 +1822,26 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	155
 	{
 		name			: "Soldiers of Tunare",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [60,92],
+		allies		: [FACTION_FAYDARKS_CHAMPIONS,FACTION_KING_TEARIS_THEX],
 		enemies			: null,
 		description		: "Kelethin druid guild.",
 		howToRaise		: "The easiest way is to <a href='http://everquest.allakhazam.com/db/quest.html?quest=611'> give muffins to Pandos</a>. This will hurt your Crushbone Orcs faction, so if you care about that faction you can <a href='http://everquest.allakhazam.com/db/quest.html?quest=140'>turn in rusty weapons</a> instead.",
 		factionsLowered	: null,
 	},
-	//	156
 	{
 		name			: "Solusek Mining Co.",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [63,90,104,114],
+		allies		: [FACTION_GEM_CHOPPERS,FACTION_KING_AKANON,FACTION_MERCHANTS_OF_AKANON,FACTION_MINERS_GUILD_628],
 		enemies			: null,
 		description		: "Gnome miners opearting in the tunnels below the LAvastorm Mountains.",
 		howToRaise		: "Lay waste to Nagafen's followers or the Kobolds of Fire Pit.",
-		factionsLowered	: [97,117],
+		factionsLowered		: [FACTION_KOBOLDS_OF_FIRE_PIT,FACTION_NAGAFEN],
 	},
-	//	157
 	{
 		name			: "Song Weavers",
 		era				: 0,
@@ -1748,150 +1852,136 @@ var factionList = [
 		howToRaise		: "Turn in <a href='http://everquest.allakhazam.com/db/quest.html?quest=177'>spiderling silk</a>.",
 		factionsLowered	: null,
 	},
-	//	158
 	{
 		name			: "Split Paw Clan",
 		era				: 0,
 		importance		: importanceExpendable,
-		allies			: [146],
-		enemies			: [70,83],
+		allies		: [FACTION_SABERTOOTHS_OF_BLACKBURROW],
+		enemies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_KARANA_RESIDENTS],
 		description		: "A clan of gnolls living in South Karana, having been driven out of their home by a rival gnoll clan.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	159
 	{
 		name			: "Sporali",
 		era				: 0,
 		importance		: importanceUnimportant,
-		allies			: [20,131],
+		allies		: [FACTION_CLAN_RUNNYEYE,FACTION_PICKCLAW_GOBLINS],
 		enemies			: null,
 		description		: "Sporali living within the caverns of  Clan Runnyeye.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	160
 	{
 		name			: "Steel Warriors",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [70,96],
-		enemies			: [29,167],
+		allies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_KNIGHTS_OF_TRUTH],
+		enemies		: [FACTION_CORRUPT_QEYNOS_GUARDS,FACTION_THE_FREEPORT_MILITA],
 		description		: "Human warrior guild found in both Qeynos and Freeport.",
 		howToRaise		: "Do Citizens of Freeport quests and missions.",
 		factionsLowered	: null,
 	},
-	//	161
 	{
 		name			: "Stone Hive Bixies",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [69],
+		enemies		: [FACTION_GUARDIANS_OF_THE_VALE],
 		description		: "Bixies found in the areas around Rivervale.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	162
 	{
 		name			: "Storm Guard",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [84,109,113],
-		enemies			: [31],
+		allies		: [FACTION_KAZON_STORMHAMMER,FACTION_MERCHANTS_OF_KALADIM,FACTION_MINERS_GUILD_249],
+		enemies		: [FACTION_CRAKNEK_WARRIORS],
 		description		: "Kaladim warrior guild and guard faction.",
 		howToRaise		: "There are many ways to raise this faction, but I recommend fighting Riptide aqua goblins for the additional Emerald Warriors and Gem Choppers hits.",
-		factionsLowered	: [114],
+		factionsLowered		: [FACTION_MINERS_GUILD_628],
 	},
-	//	163
 	{
 		name			: "Storm Reapers",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [102,112],
-		enemies			: [173],
+		allies		: [FACTION_MAYOR_GUBBIN,FACTION_MERCHANTS_OF_RIVERVALE],
+		enemies		: [FACTION_UNKEMPT_DRUIDS],
 		description		: "Rivervale druid guild.",
 		howToRaise		: "Hunt Runnyeye goblins.",
-		factionsLowered	: [20],
+		factionsLowered		: [FACTION_CLAN_RUNNYEYE],
 	},
-	//	164
 	{
 		name			: "Surefall Protected Animals",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [80,140],
-		enemies			: [82],
+		allies		: [FACTION_JAGGEDPINE_TREEFOLK,FACTION_PROTECTORS_OF_PINE],
+		enemies		: [FACTION_KARANA_BANDITS],
 		description		: "Animals protected by the inhabitants of Surefall Glade. Though this faction has no quests it's listed as important since it's closely linked to the Qeynos druid and ranger guilds. It's useful to keep it at least non-kos so you don't get attacked by bears in Surefall Glade (and ruin druid factions when you defend yourself).",
 		howToRaise		: "The only way to raise this faction is to do quests for either Jaggedpine Treefolk or Unkempt Druids. I recommend going the Jaggedpine Treefolk route, as there's only one option for Unkempt Druids and it requires killing a Jaggedpine Treefolk NPC so it's 10 steps forward, 7 steps back. You can do <a href='http://everquest.allakhazam.com/db/quest.html?quest=545'>Gharin's Note</a> and <a href='http://everquest.allakhazam.com/db/quest.html?quest=251'>Nesiff's Statue</a> at the same time as they both require travelling between South Qeynos and Surefall Glade. The quest items are lore but tradeable so you can stash a spare in your shared bank and do each quest twice per round trip.",
-		factionsLowered	: [173],
+		factionsLowered		: [FACTION_UNKEMPT_DRUIDS],
 	},
-	//	165
 	{
 		name			: "Temple of Solusek Ro",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [147],
+		enemies		: [FACTION_SHADOWED_MEN],
 		description		: "Inhabitants of the temple in the Lavastorm Mountains.",
 		howToRaise		: "Give cash to <a href='http://everquest.allakhazam.com/db/quest.html?quest=305'>Rathmana Allin</a> or fight Shadowed Men throughout Norrath.",
-		factionsLowered	: [147],
+		factionsLowered		: [FACTION_SHADOWED_MEN],
 	},
-	//	166
 	{
 		name			: "The Dead",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [218],
-		enemies			: [54,85,91,138],
+		allies		: [FACTION_QUEEN_CRISTANOS_THEX],
+		enemies		: [FACTION_ELDRITCH_COLLECTIVE,FACTION_KEEPERS_OF_THE_ARTS,FACTION_KING_NAYTHOX_THEX,FACTION_PRIMORDIAL_MALICE],
 		description		: "Neriak necromancer guild. They have quite a few enemies, which gives you a few options for raising them. Unfortunately most of the feelings are mutual, so it's difficult to repair those other factions without then hurting this one again.",
 		howToRaise		: "Kill <a href='http://everquest.allakhazam.com/db/npc.html?id=4506'>members of King Naythox Thex</a> faction.",
-		factionsLowered	: [78,91],
+		factionsLowered		: [FACTION_INDIGO_BROTHERHOOD,FACTION_KING_NAYTHOX_THEX],
 	},
-	//	167
 	{
 		name			: "The Freeport Milita",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [27],
-		enemies			: [96,136],
+		allies		: [FACTION_COALITION_OF_TRADEFOLK_UNDERGROUND],
+		enemies		: [FACTION_KNIGHTS_OF_TRUTH,FACTION_PRIESTS_OF_MARR],
 		description		: "Freeport guards.",
 		howToRaise		: "Complete the Citizens of Freeport missions added in Prophecy of Ro.",
 		factionsLowered	: null,
 	},
-	//	168
 	{
 		name			: "The Spurned",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [166],
+		enemies		: [FACTION_THE_DEAD],
 		description		: "Dark elf caster guild, not including necromancers.",
 		howToRaise		: "This faction can only be increased by repeating one or two steps of <a href='http://everquest.allakhazam.com/db/quest.html?quest=168'>this quest</a>. You can stick to just doing the Leatherfoot Orders portion if you don't want to hurt a few halfling factions, although if you're planning to raise Unkempt Druids you'll need to kill a few Stormreapers anyway.",
-		factionsLowered	: [166],
+		factionsLowered		: [FACTION_THE_DEAD],
 	},
-	//	169
 	{
 		name			: "Treants of Jaggedpine",
 		era				: 0,
 		importance		: importanceUnimportant,
-		allies			: [143],
+		allies		: [FACTION_RESIDENTS_OF_JAGGEDPINE],
 		enemies			: null,
 		description		: "Treants of the Jaggedpine Forest.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	170
 	{
 		name			: "Tribe Vrodak",
 		era				: 0,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [64],
+		enemies		: [FACTION_GOBLINS_OF_FIRE_PEAK],
 		description		: "Kobolds living in Lavastorm and the adjacent caverns. Diametrically opposed to Goblins of Fire Peak. You can raise one or the other but not both.",
 		howToRaise		: "Kill nearby cinder goblins.",
-		factionsLowered	: [64],
+		factionsLowered		: [FACTION_GOBLINS_OF_FIRE_PEAK],
 	},
-	//	171
 	{
 		name			: "Tunare's Scouts",
 		era				: 0,
@@ -1900,31 +1990,28 @@ var factionList = [
 		enemies			: null,
 		description		: "Kelethin rogue guild.",
 		howToRaise		: "If you want to preserve your Arboreans of the Faydark faction you will have to do quests for the scouts, otherwise waste the little trees.",
-		factionsLowered	: [7],
+		factionsLowered		: [FACTION_ARBOREANS_OF_THE_FAYDARK],
 	},
-	//	172
 	{
 		name			: "Undead Frogloks of Guk",
 		era				: 0,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [61],
+		enemies		: [FACTION_FROGLOKS_OF_GUK],
 		description		: "Cursed frogloks in the depths of Guk.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	173
 	{
 		name			: "Unkempt Druids",
 		era				: 0,
 		importance		: importanceExpendable,
-		allies			: [164],
-		enemies			: [70,80],
+		allies		: [FACTION_SUREFALL_PROTECTED_ANIMALS],
+		enemies		: [FACTION_GUARDS_OF_QEYNOS,FACTION_JAGGEDPINE_TREEFOLK],
 		description		: "Extremist druids who take a much more aggressive approach to protecting nature.",
 		howToRaise		: "Fight the Stormreapers.",
-		factionsLowered	: [102,112,163],
+		factionsLowered		: [FACTION_MAYOR_GUBBIN,FACTION_MERCHANTS_OF_RIVERVALE,FACTION_STORM_REAPERS],
 	},
-	//	174
 	{
 		name			: "Verish Mal",
 		era				: 0,
@@ -1935,18 +2022,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	175
 	{
 		name			: "Vox",
 		era				: 0,
 		importance		: importanceExpendable,
-		allies			: [117],
+		allies		: [FACTION_NAGAFEN],
 		enemies			: null,
 		description		: "The famous ice dragon and her followers in Permafrost Keep.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	176
 	{
 		name			: "Warriors of Gukta",
 		era				: 0,
@@ -1957,18 +2042,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	177
 	{
 		name			: "Whistling Fist Brotherhood",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [206],
+		enemies		: [FACTION_SWIFT_TAILS],
 		description		: "An ancient order of monks.",
 		howToRaise		: "Complete <a href='http://everquest.allakhazam.com/db/quest.html?quest=254'>this quest</a>.",
-		factionsLowered	: [206],
+		factionsLowered		: [FACTION_SWIFT_TAILS],
 	},
-	//	178
 	{
 		name			: "Wizards of Gukta",
 		era				: 0,
@@ -1979,73 +2062,66 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	179
 	{
 		name			: "Wolves of the North",
 		era				: 0,
 		importance		: importanceImportant,
-		allies			: [107,150,160],
+		allies		: [FACTION_MERCHANTS_OF_HALAS,FACTION_SHAMEN_OF_JUSTICE,FACTION_STEEL_WARRIORS],
 		enemies			: null,
 		description		: "Halas guards and warrior guild.",
 		howToRaise		: "Do quests such as <a href='http://everquest.allakhazam.com/db/quest.html?quest=625'>this one</a> or quests for Merchants of Halas.",
 		factionsLowered	: null,
 	},
-	//	180
 	{
 		name			: "Zazamoukh",
 		era				: 0,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [5],
+		enemies		: [FACTION_ANKHEFENMUT],
 		description		: "A sphinx and her scarab followers found in Rathe Mountains.",
 		howToRaise		: "Kill the rival sphinx Ankhefenmut and her followers.",
-		factionsLowered	: [5],
+		factionsLowered		: [FACTION_ANKHEFENMUT],
 	},
-	//	181
 	{
 		name			: "Betrayers of Di'Zok",
 		era				: 1,
 		importance		: importanceExpendable,
-		allies			: [190],
-		enemies			: [183],
+		allies		: [FACTION_FOLLOWERS_OF_KOROCUST],
+		enemies		: [FACTION_BROOD_OF_DIZOK],
 		description		: "Sarnak traitors in the Hallss of Betrayal.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	182
 	{
 		name			: "Bloodgills",
 		era				: 1,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [201],
+		enemies		: [FACTION_PIRATES_OF_GUNTHAK],
 		description		: "Aqua goblins in the Lake of Ill Omen.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	183
 	{
 		name			: "Brood of Di'Zok",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [203],
-		enemies			: [195],
+		allies		: [FACTION_SARNAK_COLLECTIVE],
+		enemies		: [FACTION_GOBLINS_OF_MOUNTAIN_DEATH],
 		description		: "Sarnak living in Chardok.",
 		howToRaise		: "Fight in Halls of Betrayal. You can also fight goblins if you don't care about Goblins of Mountain Death faction.",
-		factionsLowered	: [181,190],
+		factionsLowered		: [FACTION_BETRAYERS_OF_DIZOK,FACTION_FOLLOWERS_OF_KOROCUST],
 	},
-	//	184
 	{
 		name			: "Brood of Kotiz",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [198],
+		allies		: [FACTION_LEGION_OF_CABILIS],
 		enemies			: null,
 		description		: "Cabilis necromancer guild.",
 		howToRaise		: "Kill Iksar bandits.",
-		factionsLowered	: [208],
+		factionsLowered		: [FACTION_THE_FORSAKEN],
 	},
-	//	185
 	{
 		name			: "Burynai Legion",
 		era				: 1,
@@ -2056,18 +2132,16 @@ var factionList = [
 		howToRaise		: "Assist the legion pacifists in the EoK version of Frontier Mountains. (This is part of spawning the <a href='http://everquest.allakhazam.com/db/npc.html?id=51575'>Ancient Destroyer</a>.)",
 		factionsLowered	: null,
 	},
-	//	186
 	{
 		name			: "Cabilis Residents",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [198],
+		allies		: [FACTION_LEGION_OF_CABILIS],
 		enemies			: null,
 		description		: "Residents of the Iksar city in Kunark.",
 		howToRaise		: "Deliver bone chips to <a href='http://everquest.allakhazam.com/db/quest.html?quest=260'>Trooper Mozo</a>.",
 		factionsLowered	: null,
 	},
-	//	187
 	{
 		name			: "Citizens of Torsis",
 		era				: 1,
@@ -2078,40 +2152,36 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	188
 	{
 		name			: "Crusaders of Greenmist",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [198],
+		allies		: [FACTION_LEGION_OF_CABILIS],
 		enemies			: null,
 		description		: "Cabilis shadowknight guild.",
 		howToRaise		: "Deliver bone chips to <a href='http://everquest.allakhazam.com/db/quest.html?quest=260'>Trooper Mozo</a>.",
 		factionsLowered	: null,
 	},
-	//	189
 	{
 		name			: "Drusella Sathir",
 		era				: 1,
 		importance		: importanceExpendable,
-		allies			: [215],
-		enemies			: [101],
+		allies		: [FACTION_VENRIL_SATHIR],
+		enemies		: [FACTION_MAYONG_MISTMOORE],
 		description		: "An undead iksar found in Howling Stones. Provides a way to raise Mayong Mistmoore faction without hurting Ring of Scale or League of Antonican Bards, to whom Mayong is otherwise diametrically opposed.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	190
 	{
 		name			: "Followers of Korocust",
 		era				: 1,
 		importance		: importanceExpendable,
-		allies			: [181],
-		enemies			: [183],
+		allies		: [FACTION_BETRAYERS_OF_DIZOK],
+		enemies		: [FACTION_BROOD_OF_DIZOK],
 		description		: "Followers of the Sarnak traitor found in Halls of Betrayal.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	191
 	{
 		name			: "Frogloks of Krup",
 		era				: 1,
@@ -2120,9 +2190,8 @@ var factionList = [
 		enemies			: null,
 		description		: "Inhabitants of the froglok city in Swamp of No Hope, in theory, although most of the frogloks there actually use Frogloks of Kunark faction.",
 		howToRaise		: "Fight frogloks in Old Sebilis.",
-		factionsLowered	: [193,213],
+		factionsLowered		: [FACTION_FROGLOKS_OF_SEBILIS,FACTION_TRAKANON],
 	},
-	//	192
 	{
 		name			: "Frogloks of Kunark",
 		era				: 1,
@@ -2133,84 +2202,76 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	193
 	{
 		name			: "Frogloks of Sebilis",
 		era				: 1,
 		importance		: importanceExpendable,
-		allies			: [213],
-		enemies			: [61,191,198],
+		allies		: [FACTION_TRAKANON],
+		enemies		: [FACTION_FROGLOKS_OF_GUK,FACTION_FROGLOKS_OF_KRUP,FACTION_LEGION_OF_CABILIS],
 		description		: "Frogloks found in the ruins of Old Sebilis.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	194
 	{
 		name			: "Goblins of Cleaving Tooth",
 		era				: 1,
 		importance		: importanceExpendable,
-		allies			: [195],
-		enemies			: [197, 198],
+		allies		: [FACTION_GOBLINS_OF_MOUNTAIN_DEATH],
+		enemies		: [FACTION_INHABITANTS_OF_FIRIONA_VIE, FACTION_LEGION_OF_CABILIS],
 		description		: "Goblins found in various Kunark zones. Does not include Droga/Nurga goblins.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	195
 	{
 		name			: "Goblins of Mountain Death",
 		era				: 1,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [183],
+		enemies		: [FACTION_BROOD_OF_DIZOK],
 		description		: "Goblins found in Droga, Nurga, and other nearby Kunark zones.",
 		howToRaise		: "Kill Sarnak in Chardok.",
-		factionsLowered	: [183],
+		factionsLowered		: [FACTION_BROOD_OF_DIZOK],
 	},
-	//	196
 	{
 		name			: "Horde of Xalgoz",
 		era				: 1,
 		importance		: importanceExpendable,
-		allies			: [215],
+		allies		: [FACTION_VENRIL_SATHIR],
 		enemies			: null,
 		description		: "Undead in Kaesora.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	197
 	{
 		name			: "Inhabitants of Firiona Vie",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [55, 162],
-		enemies			: [198, 201],
+		allies		: [FACTION_EMERALD_WARRIORS, FACTION_STORM_GUARD],
+		enemies		: [FACTION_LEGION_OF_CABILIS, FACTION_PIRATES_OF_GUNTHAK],
 		description		: "Pretty much what it sounds like. Citizens of the elven outpost in Kunark (at least until it gets taken over by the dark elves).",
 		howToRaise		: "Punish the Pirates of Gunthak.",
-		factionsLowered	: [201],
+		factionsLowered		: [FACTION_PIRATES_OF_GUNTHAK],
 	},
-	//	198
 	{
 		name			: "Legion of Cabilis",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [186, 188, 204, 206],
+		allies		: [FACTION_CABILIS_RESIDENTS, FACTION_CRUSADERS_OF_GREENMIST, FACTION_SCALED_MYSTICS, FACTION_SWIFT_TAILS],
 		enemies			: null,
 		description		: "The Guards of Cabilis and the surrounding areas.",
 		howToRaise		: "If you are KOS start out by killing Iksar bandits. (There are several other types of creatures you can hunt for Legion gains, but you will have to fight the bandits anyway for the Iksar necromancer guild so might as well use them.) Once you are non-kos deliver bone chips to <a href='http://everquest.allakhazam.com/db/quest.html?quest=260'>Trooper Mozo</a>.",
-		factionsLowered	: [208],
+		factionsLowered		: [FACTION_THE_FORSAKEN],
 	},
-	//	199
 	{
 		name			: "Minions of Scale",
 		era				: 1,
 		importance		: importanceExpendable,
-		allies			: [202],
+		allies		: [FACTION_RING_OF_SCALE],
 		enemies			: null,
 		description		: "Servants of the Ring of Scale in Skyfire Mountains (and a few in Burning Woods). ",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	200
 	{
 		name			: "Pack of Tomar",
 		era				: 1,
@@ -2221,51 +2282,46 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	201
 	{
 		name			: "Pirates of Gunthak",
 		era				: 1,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [197],
+		enemies		: [FACTION_INHABITANTS_OF_FIRIONA_VIE],
 		description		: "Don't be fooled by the name, these pirates are found in various parts of Kunark rather than Gunthak.",
 		howToRaise		: "Kill Bloodgills in Lake of Ill Omen",
-		factionsLowered	: [182],
+		factionsLowered		: [FACTION_BLOODGILLS],
 	},
-	//	202
 	{
 		name			: "Ring of Scale",
 		era				: 1,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [99, 101, 215],
+		enemies		: [FACTION_LEAGUE_OF_ANTONICAN_BARDS, FACTION_MAYONG_MISTMOORE, FACTION_VENRIL_SATHIR],
 		description		: "A collection of dragons in Kuark",
 		howToRaise		: "Lay waste to Castle Mistmoore.",
-		factionsLowered	: [0, 101],
+		factionsLowered		: [FACTION_AGENTS_OF_MISTMOORE, FACTION_MAYONG_MISTMOORE],
 	},
-	//	203
 	{
 		name			: "Sarnak Collective",
 		era				: 1,
 		importance		: importanceUnimportant,
-		allies			: [183],
+		allies		: [FACTION_BROOD_OF_DIZOK],
 		enemies			: null,
 		description		: "Various Sarnak outside of Chardok.",
 		howToRaise		: "There is nothing you can kill to raise this faction, but you can raise it indirectly by doing <a href='https://everquest.allakhazam.com/db/quest.html?quest=1887'>quests for Herald Telcha</a>.",
-		factionsLowered	: [195],
+		factionsLowered		: [FACTION_GOBLINS_OF_MOUNTAIN_DEATH],
 	},
-	//	204
 	{
 		name			: "Scaled Mystics",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [198],
+		allies		: [FACTION_LEGION_OF_CABILIS],
 		enemies			: null,
 		description		: "Iksar Shaman Guild.",
 		howToRaise		: "Deliver bone chips to <a href='http://everquest.allakhazam.com/db/quest.html?quest=260'>Trooper Mozo</a>.",
 		factionsLowered	: null,
 	},
-	//	205
 	{
 		name			: "Spirocs of Timorous",
 		era				: 1,
@@ -2276,40 +2332,36 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	206
 	{
 		name			: "Swift Tails",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [198],
+		allies		: [FACTION_LEGION_OF_CABILIS],
 		enemies			: null,
 		description		: "Iksar monk guild.",
 		howToRaise		: "Deliver bone chips to <a href='http://everquest.allakhazam.com/db/quest.html?quest=260'>Trooper Mozo</a>.",
 		factionsLowered	: null,
 	},
-	//	207
 	{
 		name			: "Syrik Iceblood",
 		era				: 1,
 		importance		: importanceImportant,
-		allies			: [186, 188, 198, 204, 206],
+		allies		: [FACTION_CABILIS_RESIDENTS, FACTION_CRUSADERS_OF_GREENMIST, FACTION_LEGION_OF_CABILIS, FACTION_SCALED_MYSTICS, FACTION_SWIFT_TAILS],
 		enemies			: null,
 		description		: "A lone Iksar in the Lake of Ill Omen.",
 		howToRaise		: "Comple <a href='https://everquest.allakhazam.com/db/quest.html?quest=2479'>Syrik's quest.</a>",
 		factionsLowered	: null,
 	},
-	//	208
 	{
 		name			: "The Forsaken",
 		era				: 1,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [184, 198],
+		enemies		: [FACTION_BROOD_OF_KOTIZ, FACTION_LEGION_OF_CABILIS],
 		description		: "Iksar bandits in Kunark. This faction can't be raised, but killing them provides a handy way to raise the Cabilis necromancer faction.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	209
 	{
 		name			: "The Hotwingz",
 		era				: 1,
@@ -2320,7 +2372,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	210
 	{
 		name			: "The Kromdek",
 		era				: 1,
@@ -2331,7 +2382,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	211
 	{
 		name			: "The Kromdul",
 		era				: 1,
@@ -2342,7 +2392,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	212
 	{
 		name			: "Thrall of Kly",
 		era				: 1,
@@ -2353,18 +2402,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	213
 	{
 		name			: "Trakanon",
 		era				: 1,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [198],
+		enemies		: [FACTION_LEGION_OF_CABILIS],
 		description		: "The infamous undead dragon living in Sebilis. While it is possible to raise this faction, doing so would ruin the irreperable Jaled Dar faction as well as Claws of Veeshan and Ring of Scale, so it may not be worth the trouble unless you really like Trakanon.",
 		howToRaise		: "Kill Jaled Dar's shade in Dragon Necropolis.",
-		factionsLowered	: [233],
+		factionsLowered		: [FACTION_JALED_DAR],
 	},
-	//	214
 	{
 		name			: "Truespirit",
 		era				: 1,
@@ -2375,7 +2422,6 @@ var factionList = [
 		howToRaise		: "Repeat faction hit steps from one of the four epics that gives increases to this faction. Repeating the initial turn in of the Shaman 1.0 is generally considered the fastest way. Non-shamans will need to charm the lesser spirit to get the stone and then use hide/sneak to turn it in until their faction gets high enough.",
 		factionsLowered	: null,
 	},
-	//	215
 	{
 		name			: "Venril Sathir",
 		era				: 1,
@@ -2384,9 +2430,8 @@ var factionList = [
 		enemies			: null,
 		description		: "The infamous iksar lich, as well as his allies and followers. Although the easiest way to raise this faction is to wage war on the Ring of Scale, this presents a problem for the completionist as repairing Ring of Scale damages Mayong Mistmoore, and repairing Mayong Mistmoore damages this faction. Instead it's better to do quests for NPCs on this faction, provided you are non-KOS.",
 		howToRaise		: "Do quests for NPCs on this faction. <a href='https://everquest.allakhazam.com/db/quest.html?quest=5'>This one</a> may be the best option, although it will hurt a couple of Sarnak factions if you don't use an alt to do the killing.",
-		factionsLowered	: [183, 203],
+		factionsLowered		: [FACTION_BROOD_OF_DIZOK, FACTION_SARNAK_COLLECTIVE],
 	},
-	//	216
 	{
 		name			: "Zordak Ragefire",
 		era				: 1,
@@ -2397,18 +2442,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-	//	217
 	{
 		name			: "Clan Grikbar",
 		era				: 0,
 		importance		: importanceUseless,
 		allies			: null,
-		enemies			: [63],
+		enemies		: [FACTION_GEM_CHOPPERS],
 		description		: "Kobolds found in Steamfont Mountains, ostensibly. This faction is not included in the in game faction window and the Grikbar kobolds in Steamfont appear to longer be part of it. Though it can be increased by killing Gem Choppers there is no benefit to doing so, not even being non-KOS or having a nice full bar in your faction window.",
 		howToRaise		: "Kill Gem Choppers.",
-		factionsLowered	: [63, 90, 104],
+		factionsLowered		: [FACTION_GEM_CHOPPERS, FACTION_KING_AKANON, FACTION_MERCHANTS_OF_AKANON],
 	},
-	//	218
 	{
 		name			: "Queen Cristanos Thex",
 		era				: 0,
@@ -2417,9 +2460,8 @@ var factionList = [
 		enemies			: null,
 		description		: "The queen of the dark elves, opposed to several other Neriak factions, including the dark elf king's faction. This faction is not included in the in game faction window and doesn't appear to have any NPCs associated with it. It can be raised, but doesn't appear to carry any benefit to doing so, not even being non-KOS or having a full bar in the faction window.",
 		howToRaise		: "Either kill <a href='https://everquest.allakhazam.com/db/npc.html?id=4506'>Szorn</a> or do quests for the Dead. The faction hits below assume the former route. ",
-		factionsLowered	: [78, 91],
+		factionsLowered		: [FACTION_INDIGO_BROTHERHOOD, FACTION_KING_NAYTHOX_THEX],
 	},
-	//	219
 	{
 		name			: "Oracle of Marud",
 		era				: 0,
@@ -2428,9 +2470,8 @@ var factionList = [
 		enemies			: null,
 		description		: "An oracle who is opposed to the Oracle of K'Arnon.",
 		howToRaise		: "Kill the Oracle of K'Arnon and his guardian.",
-		factionsLowered	: [125],
+		factionsLowered		: [FACTION_ORACLE_OF_KARNON],
 	},
-	//	220
 	{
 		name			: "Veeshan",
 		era				: 0,
@@ -2439,20 +2480,18 @@ var factionList = [
 		enemies			: null,
 		description		: "The crystalline dragon goddess.",
 		howToRaise		: "Kill Paladins of Underfoot.",
-		factionsLowered	: [23,84,113,128],
+		factionsLowered		: [FACTION_CLERICS_OF_UNDERFOOT,FACTION_KAZON_STORMHAMMER,FACTION_MINERS_GUILD_249,FACTION_PALADINS_OF_UNDERFOOT],
 	},
-	//	221
 	{
 		name			: "Chetari",
 		era				: 2,
 		importance		: importanceUnimportant,
-		allies			: [255],
-		enemies			: [240],
+		allies		: [FACTION_ZLANDICAR],
+		enemies		: [FACTION_PAEBALA],
 		description		: "Chetari loyal to Zlandicar in Dragon Necropolis. Although they are diametrically opposed to the Paebala, it is theoretically possible to max both by killing enough Paebala to get non-KOS to Zlandicar, then using an alt to repeatedly kill Neb for his head to give Zlandi while cautiously killing Chetari to repair Paebala (but not so many you get KOS to Zlandicar again).",
 		howToRaise		: "Kill the Paebala.",
-		factionsLowered	: [240],
+		factionsLowered		: [FACTION_PAEBALA],
 	},
-	//	222
 	{
 		name			: "Citizens of Froststone",
 		era				: 2,
@@ -2461,32 +2500,29 @@ var factionList = [
 		enemies			: null,
 		description		: "Coldain living in the Crystal Caverns.",
 		howToRaise		: "Kill Ry'Gorr orcs.",
-		factionsLowered	: [243],
+		factionsLowered		: [FACTION_RYGORR_CLAN_SNOW_ORCS],
 	},
-    //	223
 	{
 		name			: "Claws of Veeshan",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [254],
-		enemies			: [236],
+		allies		: [FACTION_YELINAK],
+		enemies		: [FACTION_KROMZEK],
 		description		: "Dragons living in Skyshrine and the surrounding zones. Along with Yelinak, part of one of the three major faction groups in Velious. Prior to SoF the only way to raise this without harming Kromzek faction was to kill Zlandicar, but Crystallos opens up a new avenue for raising this faction.",
 		howToRaise		: "Kill in Crystallos",
         //TODO: Add Crystallos faction
 		factionsLowered	: null,
 	},
-    //	224
 	{
 		name			: "Coldain",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [226],
-		enemies			: [235, 236],
+		allies		: [FACTION_DAIN_FROSTREAVER_IV],
+		enemies		: [FACTION_KROMRIF, FACTION_KROMZEK],
 		description		: "Snow dwarves of Thurgadin. Along with Dain Frostreaver IV, part of one of the three major faction groups in Velious. You're likely to max out this faction long before you max out the companion Dain faction.",
 		howToRaise		: "Kill frost giants. You can also save kromrif heads and toes to repeat the first couple of <a href='https://everquest.allakhazam.com/db/quest.html?quest=937'>Prayer Shawl quests.</a>",
-		factionsLowered	: [235, 236],
+		factionsLowered		: [FACTION_KROMRIF, FACTION_KROMZEK],
 	},
-    //	225
 	{
 		name			: "Crystal Denizens",
 		era				: 2,
@@ -2497,18 +2533,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	226
 	{
 		name			: "Dain Frostreaver IV",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [224],
-		enemies			: [234],
+		allies		: [FACTION_COLDAIN],
+		enemies		: [FACTION_KING_TORMAX],
 		description		: "The ruler of Thurgadin and some of his close associates.",
 		howToRaise		: "You can kill King Tormax a few times if you're feeling fancy. Otherwise just do quests for the Coldain, such as the first couple of <a href='https://everquest.allakhazam.com/db/quest.html?quest=937'>Prayer Shawl quests.</a>",
-		factionsLowered	: [235, 236],
+		factionsLowered		: [FACTION_KROMRIF, FACTION_KROMZEK],
 	},
-    //	227
 	{
 		name			: "Denizens of Mischief",
 		era				: 2,
@@ -2519,29 +2553,26 @@ var factionList = [
 		howToRaise		: "The only way appears to be <a href='https://everquest.allakhazam.com/db/quest.html?quest=5299'>this quest</a>.",
 		factionsLowered	: null,
 	},
-    //	228
 	{
 		name			: "Disciples of Kerafyrm",
 		era				: 2,
 		importance		: importanceExpendable,
-		allies			: [235, 236],
-		enemies			: [223],
+		allies		: [FACTION_KROMRIF, FACTION_KROMZEK],
+		enemies		: [FACTION_CLAWS_OF_VEESHAN],
 		description		: "Followers of Kerafyrm in Sleeper's Tomb.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	229
     {
         name			: "Gelistial",
         era				: 2,
         importance		: importanceUnimportant,
         allies			: null,
-        enemies			: [237],
+        enemies		: [FACTION_LITHINIATH],
         description		: "Unicorns in the Wakend Lands.",
         howToRaise		: "Kill corrupted unicorns.",
-        factionsLowered	: [237],
+        factionsLowered		: [FACTION_LITHINIATH],
     },
-    //	230
 	{
 		name			: "Geonid Collective",
 		era				: 2,
@@ -2550,20 +2581,18 @@ var factionList = [
 		enemies			: null,
 		description		: "Geonids in Velious. Flagged as important due to one singular quest, otherwise unimportant (or expendable).",
 		howToRaise		:  "The only way is <a href='https://everquest.allakhazam.com/db/quest.html?quest=931'>this quest.</a> While this faction has no enemies, the quest requires an earlier Coldain turnin that will give some giant faction hits.",
-		factionsLowered	: [235, 236],
+		factionsLowered		: [FACTION_KROMRIF, FACTION_KROMZEK],
 	},
-    //	231
 	{
 		name			: "Guardians of Veeshan",
 		era				: 2,
 		importance		: importanceExpendable,
-		allies			: [223],
+		allies		: [FACTION_CLAWS_OF_VEESHAN],
 		enemies			: null,
 		description		: "Guardians of the Temple of Veeshan. No matter how much you prove yourself to their allies in Skyshrine you will never be welcome in the protected parts of the temple.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	232
 	{
 		name			: "Holgresh",
 		era				: 2,
@@ -2574,95 +2603,86 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	233
 	{
 		name			: "Jaled Dar",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [202, 223],
-		enemies			: [213],
+		allies		: [FACTION_RING_OF_SCALE, FACTION_CLAWS_OF_VEESHAN],
+		enemies		: [FACTION_TRAKANON],
 		description		: "Ghostly dragon in the dragon necroplis. His quest is one of the ways to get a Sleeper's Tomb key. Killing him provides the only way to raise Trakanon faction, although since this faction cannot be repaired that is not recommended.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	234
 	{
 		name			: "King Tormax",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [236],
-		enemies			: [226, 254],
+		allies		: [FACTION_KROMZEK],
+		enemies		: [FACTION_DAIN_FROSTREAVER_IV, FACTION_YELINAK],
 		description		: "The king of Kael Drakkel. Along with Kromzek and Kromrif, part of one of the three major faction groups of Velious",
 		howToRaise		: "Do quests for the Kromzek, such as <a href='https://everquest.allakhazam.com/db/quest.html?quest=1212'>Captain Bvellos</a>.",
-		factionsLowered	: [223],
+		factionsLowered		: [FACTION_CLAWS_OF_VEESHAN],
 	},
-    //	235
 	{
 		name			: "Kromrif",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [236],
-		enemies			: [223,224],
+		allies		: [FACTION_KROMZEK],
+		enemies		: [FACTION_CLAWS_OF_VEESHAN,FACTION_COLDAIN],
 		description		: "Frost giants of Kael Drakkel. Along with Kromzek and King Tormax, part of one of the three major faction groups of Velious.",
 		howToRaise		: "Do quests for the Kromzek, such as <a href='https://everquest.allakhazam.com/db/quest.html?quest=1212'>Captain Bvellos</a>.",
-		factionsLowered	: [223],
+		factionsLowered		: [FACTION_CLAWS_OF_VEESHAN],
 	},
-    //	236
 	{
 		name			: "Kromzek",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [234, 235],
-		enemies			: [223],
+		allies		: [FACTION_KING_TORMAX, FACTION_KROMRIF],
+		enemies		: [FACTION_CLAWS_OF_VEESHAN],
 		description		: "Storm giants of Kael Drakkel. Along with Kromrif and King Tormax, part of one of the three major faction groups of Velious.",
 		howToRaise		: "Do quests Kromzek NPCs, such as <a href='https://everquest.allakhazam.com/db/quest.html?quest=1212'>Captain Bvellos</a>. The coldain heads are tradeable, and drop from non-Coldain faction mobs (such as coldain traitors or Rain of Fear coldain), so this can safely be done without harming Coldain faction.",
-		factionsLowered	: [223],
+		factionsLowered		: [FACTION_CLAWS_OF_VEESHAN],
 	},
-    //	237
 	{
 		name			: "Lithiniath",
 		era				: 2,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [229],
+		enemies		: [FACTION_GELISTIAL],
 		description		: "Corrupt unicorns in Wakend Land.",
 		howToRaise		: "Kill uncorrupted unicorns.",
-		factionsLowered	: [229],
+		factionsLowered		: [FACTION_GELISTIAL],
 	},
-    //	238
 	{
 		name			: "Old Disciples of Kerafyrm",
 		era				: 2,
 		importance		: importanceUnimportant,
-		allies			: [202, 223],
-		enemies			: [236],
+		allies		: [FACTION_RING_OF_SCALE, FACTION_CLAWS_OF_VEESHAN],
+		enemies		: [FACTION_KROMZEK],
 		description		: "Seems to apply to a lone dragon in Western Wastes. Marked unimportant due to starting non-kos, but otherwise expendable.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	239
 	{
 		name			: "Othmir",
 		era				: 2,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [251],
+		enemies		: [FACTION_ULTHORK],
 		description		: null,
 		howToRaise		: "Kill ulthork and their walruses. There are also a few Othmir quests.",
-		factionsLowered	: [251],
+		factionsLowered		: [FACTION_ULTHORK],
 	},
-    //	240
 	{
 		name			: "Paebala",
 		era				: 2,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [221, 255],
+		enemies		: [FACTION_CHETARI, FACTION_ZLANDICAR],
 		description		: "Rat people rebelling against Zlandicar in Dragon Necropolis. It is theoretically possible to max both this faction and Chetari/Zlandicar by using an alt to kill Neb for Zlandicar, but it would require a lot of grinding back and forth.",
 		howToRaise		: "Kill Chetari.",
-		factionsLowered	: [221, 255],
+		factionsLowered		: [FACTION_CHETARI, FACTION_ZLANDICAR],
 	},
-    //	241
 	{
 		name			: "Pirates of Iceclad",
 		era				: 2,
@@ -2671,42 +2691,38 @@ var factionList = [
 		enemies			: null,
 		description		: "Gnome pirates in Iceclad Ocean.",
 		howToRaise		: "<a href='https://everquest.allakhazam.com/db/quest.html?quest=930'>This quest</a> seems to be the only way. You can use an alt to avoid the Kromrif hits, although it might not be worth the bother if you're killing Kromrif for Coldain.",
-		factionsLowered	: [235, 236],
+		factionsLowered		: [FACTION_KROMRIF, FACTION_KROMZEK],
 	},
-    //	242
 	{
 		name			: "Protectors of Growth",
 		era				: 2,
 		importance		: importanceUnimportant,
-		allies			: [22, 60, 155],
+		allies		: [FACTION_CLERICS_OF_TUNARE, FACTION_FAYDARKS_CHAMPIONS, FACTION_SOLDIERS_OF_TUNARE],
 		enemies			: null,
 		description		: "Guardians of the Plane of Growth. Marked unimportant as they start non-kos to some races, but otherwise expendable.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	243
 	{
 		name			: "Ry'Gorr Clan Snow Orcs",
 		era				: 2,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [222],
+		enemies		: [FACTION_CITIZENS_OF_FROSTSTONE],
 		description		: "Orcs living in and around the Crystal Caverns.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	244
 	{
 		name			: "Servants of Tunare",
 		era				: 2,
 		importance		: importanceUnimportant,
-		allies			: [22, 60, 155],
+		allies		: [FACTION_CLERICS_OF_TUNARE, FACTION_FAYDARKS_CHAMPIONS, FACTION_SOLDIERS_OF_TUNARE],
 		enemies			: null,
 		description		: "Goddess of Growth and her followers. Marked unimportant as they start non-kos to some races, but otherwise expendable.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	245
 	{
 		name			: "Sirens of the Grotto",
 		era				: 2,
@@ -2717,18 +2733,16 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	246
 	{
 		name			: "Snowfang Gnolls",
 		era				: 2,
 		importance		: importanceImportant,
 		allies			: null,
-		enemies			: [251],
+		enemies		: [FACTION_ULTHORK],
 		description		: "Snowy gnolls living in and around Iceclad.",
 		howToRaise		: "Kill Ulthork and their pets.",
-		factionsLowered	: [251],
+		factionsLowered		: [FACTION_ULTHORK],
 	},
-    //	247
 	{
 		name			: "The Sleeper",
 		era				: 2,
@@ -2739,7 +2753,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	248
 	{
 		name			: "Tizmak Clan",
 		era				: 2,
@@ -2750,7 +2763,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	249
 	{
 		name			: "Tserrina Syl'Tor",
 		era				: 2,
@@ -2761,7 +2773,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	250
 	{
 		name			: "Tunarean Court",
 		era				: 2,
@@ -2772,29 +2783,26 @@ var factionList = [
 		howToRaise		: "Do quests. Some of their quests involve hunting giants but the drops are tradeable if you want to avoid Kael faction hits.",
 		factionsLowered	: null,
 	},
-    //	251
 	{
 		name			: "Ulthork",
 		era				: 2,
 		importance		: importanceUnimportant,
 		allies			: null,
-		enemies			: [239, 246],
+		enemies		: [FACTION_OTHMIR, FACTION_SNOWFANG_GNOLLS],
 		description		: "Walrus folk found in various areas. Since this faction is diametrically opposed to both Othmir and Snowfang Gnolls you can effectively ally with 2 of the 3, but I recommend the other two as Ulthork have no quests or merchants.",
 		howToRaise		: "Kill either Othmir or Snowfang Gnolls.",
-		factionsLowered	: [239, 246],
+		factionsLowered		: [FACTION_OTHMIR, FACTION_SNOWFANG_GNOLLS],
 	},
-    //	252
 	{
 		name			: "Velketor",
 		era				: 2,
 		importance		: importanceExpendable,
 		allies			: null,
-		enemies			: [234],
+		enemies		: [FACTION_KING_TORMAX],
 		description		: "The rogue storm giant sorceror in his labyrinth. Killing him is the only way to raise King Tormax without harming other major factions, but as CoV/Yelinak can be repaired after raising Tormax by other means this isn't really the best avenue.",
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	253
 	{
 		name			: "Warders of the Claw",
 		era				: 2,
@@ -2805,30 +2813,27 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	254
 	{
 		name			: "Yelinak",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [223],
-		enemies			: [234],
+		allies		: [FACTION_CLAWS_OF_VEESHAN],
+		enemies		: [FACTION_KING_TORMAX],
 		description		: "Leader of Skyshrine. Along with Claws of Veeshan, part of one of the three major faction groups of Velious.",
 		howToRaise		: "Hunt in Crystallos",
         //TODO: Add Crystallos faction
 		factionsLowered	: null,
 	},
-    //	255
 	{
 		name			: "Zlandicar",
 		era				: 2,
 		importance		: importanceImportant,
-		allies			: [221],
-		enemies			: [240],
+		allies		: [FACTION_CHETARI],
+		enemies		: [FACTION_PAEBALA],
 		description		: "The cannibal dragon of Dragon Necropolis. If you want to raise all 3 DN factions then kill paebala until you are able to do Zlandicar's quest, then use an alt to kill Neb to avoid the faction hit. Continue turning in Neb's head while slowly killing chetari to repair Paebala (but be careful not to kill so many you can't do Zlandicar's quest.)",
 		howToRaise		: "Kill paebala.",
-		factionsLowered	: [240],
+		factionsLowered		: [FACTION_PAEBALA],
 	},
-    //	256
 	{
 		name			: "Akheva",
 		era				: 3,
@@ -2839,7 +2844,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	257
 	{
 		name			: "",
 		era				: 3,
@@ -2850,7 +2854,6 @@ var factionList = [
 		howToRaise		: null,
 		factionsLowered	: null,
 	},
-    //	258
 	{
 		name			: "",
 		era				: 3,

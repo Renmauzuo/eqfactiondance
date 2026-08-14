@@ -22,6 +22,14 @@ $(function () {
         refreshLists();
     });
 
+    if (localStorage['maximum-era']) {
+        $('#maximum-era').val(localStorage['maximum-era']);
+    }
+    $('#maximum-era').on('change', function () {
+        localStorage['maximum-era'] = $(this).val();
+        refreshLists();
+    });
+
 	refreshLists();
 });
 
@@ -35,6 +43,7 @@ function createFactionListItem(id) {
 function refreshLists() {
 	$('.order-list').empty();
     var minimumImportance = parseInt($('#minimum-importance').val());
+    var maximumEra = parseInt($('#maximum-era').val());
 
 	var incompleteFactions = factionList.filter(function (faction) {
 		//If faction cannot be raised then remove it		
@@ -49,6 +58,11 @@ function refreshLists() {
 
         //Filter out faction if it falls below our minimum threshold
         if (faction.importance < minimumImportance) {
+            return false;
+        }
+
+        //Filter out faction if it's from a later era than selected
+        if (faction.era > maximumEra) {
             return false;
         }
 
