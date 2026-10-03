@@ -7,6 +7,7 @@ block style
     link(rel="stylesheet" type="text/css" href="styles/factionOrder.min.css"+v)
 
 block script
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js" integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg==" crossorigin="anonymous" referrerpolicy="no-referrer")
     script(src="scripts/factionOrder.min.js"+v)
 
 block content
@@ -30,6 +31,18 @@ block content
         option(value=6) Lost Dungeons of Norrath
         option(value=7) Gates of Discord
         option(value=8 selected) Omens of War
+    h2 Import Faction Standings
+    p EverQuest can export your character's faction standings to a file. Load that file here to automatically hide factions you've already maxed. Only "safe" factions (those you won't need to lower again) are hidden, and the list is re-checked repeatedly so that factions which become safe after the first round are hidden too.
+    p By default this is additive: it will hide newly maxed factions but will not unhide anything you've already hidden. Check the box below to instead replace your saved list entirely with what's derived from the file.
+    form#import-faction-form
+        input(type="checkbox" id="import-full-reset" name="import-full-reset")
+        label(for="import-full-reset") Full reset (replace saved hidden factions instead of adding to them)
+        br
+        br
+        label(for="faction-file") Faction Output File
+        br
+        input(type="file" id="faction-file" name="faction-file")
+    p#import-status
     h2 Safe Factions
     p This list includes factions which you can begin working on now as you shouldn't need to hurt them later when increasing other factions. When you have maxed a faction (or if you want to skip it) click the button next to name to update the list.
     p Completed factions are saved using localStorage.
